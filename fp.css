@@ -1,0 +1,590 @@
+*
+{
+	margin: 0px;
+	padding:0px;
+	font-family: 'times new roman';
+}
+
+body
+{
+	background-color: white !important;
+	padding: 0px;
+}
+h2,h3,h4,h5,h1,h6
+{
+	color: #121e1e !important;
+	font-weight: bold !important;
+}
+#dataforlabel
+{
+	text-align: right;
+	margin-right: 30px;
+	font-size: 2rem;
+	color: #121e1e;
+}
+
+#showingfundscount
+{
+	color: #121e1e;
+	text-align: right;
+	margin-right: 40px;
+	font-size: 1.7rem;
+}
+#showingselectedequities
+{
+	position: fixed;
+	bottom: 3vh;
+	right: 5vh;
+	width: 30%;
+	background-color: #121e1e;
+	color: white !important;
+	padding: 5px 10px;
+	border-radius: 10px;
+	text-align: center;
+	display: hidden;
+}
+
+.upp h3,.upp h4
+{
+	color: white !important;
+	font-size: 16px;
+}
+.customnavbar .profilecontainer
+{
+	margin-left: 60px;
+}
+.loginregion .row
+{
+	margin-right: 0px !important;
+	margin-left: 0px !important;
+}
+.loginregion , .signupregion
+{
+	position: fixed;
+	top: 20vh;
+	left: 25vw;
+	width: 50vw;
+	background-color: white;
+	z-index: 1032;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	overflow-x: hidden;
+
+}
+.loginregion h5, .signupregion h5
+{
+	text-align: center;
+	letter-spacing: 1.4px;
+	color: #121e1e;
+}
+.signupregion
+{
+	display: none;
+
+}
+
+.loginregion .upp,.signupregion .upp
+{
+	background-image: linear-gradient(to right,#121e1e, #121e1e);
+	color: white;
+	padding: 20px;
+	border-radius: 10px;
+}
+.signupregion .upp,.signupregion .upp1
+{
+	padding-left: 40px;
+}
+.loginregion .upp1 h4,.signupregion .upp1 h4
+{
+	float: right;
+	font-size: 3rem;
+
+}
+.loginregion .upp1 h4:hover,.signupregion .upp1 h4:hover
+{
+	cursor: pointer;
+}
+.loginregion input,.signupregion input
+{
+	width: 80%;
+	margin-left: 10%;
+	margin-top: 10vh;
+	padding: 8px;
+	border-radius: 5px;
+	border:1px solid #121e1e ;
+	color: #121e1e;
+
+}
+.signupregion input
+{
+	margin-top: 5vh;
+}
+.loginregion input:focus,.signupregion input:focus
+{
+	outline: none;
+}
+.loginregion button,.signupregion button
+{
+	width: 50%;
+	padding: 10px;
+	border-radius: 10px;
+	margin-top: 10vh;
+	margin-bottom: 5vh;
+	margin-left: 25%;
+	background-color: #121e1e;
+	color: white;
+	border: none;
+		letter-spacing: 2px;
+	font-size: 1.6rem;
+}
+.loginregion button:focus,.signupregion button:focus
+{
+	outline: none;
+}
+.customnavbar
+{
+	/*background-color: #f2f2f2 !important;*/
+	padding-top: 20px;
+	
+	opacity: 0.9;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 999;
+	background-color: white;
+}
+.customnavbar span
+{
+	padding-right: 30px;
+	float: right;
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+.customnavbar span:hover
+{
+	cursor: pointer;
+}
+.customnavbar .logo
+{
+	margin: 0px;
+	padding: 0px;
+}
+.customnavbar .titles
+{
+	padding-top: 30px;
+}
+.customnavbar .logo img
+{
+	width: 30%;
+	margin: 0px;
+	padding: 0px;
+
+	width: 300px;
+	height: auto;
+	margin-left: 20px;
+}
+
+.coverscreen
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1003;
+	background-image: linear-gradient(to right,#121e1e, #121e1e);
+	display: none;
+	transition: all ease-in 20;
+}
+
+.coverscreen h4
+{
+	color: white;
+	
+	margin-top: 40vh;
+	letter-spacing: 2px;
+	font-size: 2.7rem;
+	text-align: center;
+}
+
+.heroregion
+{
+	/* position: relative; */
+	padding-top: 125px;
+	
+	max-height: 100vh;
+	overflow-y: hidden;
+	position: relative;
+}
+.heroregion img
+{
+	width: 100%;
+	height: 70vh;
+	opacity: 1;
+}
+
+.heroregion button
+{
+	/* position: absolute;
+	bottom: 60px; */
+	width: 40%;
+	margin-left: 30%;
+	font-size: 2.4rem;
+	color: #121e1e;
+	padding: 20px 30px;
+	border-radius: 40px;
+	background-color: white;
+	text-align: center;
+	z-index: 1023;
+	font-family: 'avenier';
+	font-weight: lighter;
+	letter-spacing: 2px;
+	margin-top: -100px;
+
+}
+.heroregion button:focus
+{
+	outline: none;
+}
+
+
+
+.sec1
+{
+	padding: 0px 30px;
+	height: 100vh;
+	/*background-image: url('mfbg.png');*/
+	margin-top: 15vh;
+	background-size: 50vw auto;
+	background-repeat: no-repeat;
+	background-position: center;
+	display: none;
+}
+
+ .sec1 h4
+{
+	margin: auto;
+	text-align: center;
+	font-size: 3rem;
+	letter-spacing: 2px;
+	margin-top: 5vh;
+	color: #121e1e;
+}
+.sec1 h3 
+{
+	text-align: center;
+	margin-top: 5vh;
+	color: #121e1e;
+	font-size: 2.5rem;
+	letter-spacing: 2px;
+}
+
+
+.nextsection
+{
+	display: none;
+}
+.sec1 input
+{
+	width: 40%;
+	margin-left: 30%;
+	margin-top: 10vh;
+	padding: 5px;
+	border-radius: 5px;
+	border:2px solid #121e1e;
+}
+.sec1 input:focus
+{
+	outline: none;
+}
+
+.sec1 button
+{
+	width: 90%;
+	margin-top: 10vh;
+	padding: 15px;
+	
+	margin-left: 5%;
+	background-image: linear-gradient(to right,#121e1e, #121e1e);
+	color: white;
+	font-size: 4rem;
+	border-radius: 5px;
+}
+.sec1 button:focus
+{
+	outline:none;
+}
+.sec1 button:hover
+{
+	cursor: pointer;
+}
+
+.sec2
+{
+	height: 100vh;
+	margin-top: 20vh;
+	display: none;
+	/*mdisplay: none;*/
+}
+.sec2 .filters
+{
+	display: none;
+}
+.sec2 .addfilter .secondpart
+{
+	margin-top: 0px;
+	margin-left: -100vw;
+	transition: all 1s ease-in;
+	z-index: 999;
+}
+.sec2 .addfilter .firstpart
+{
+	z-index: 1000;
+	background-color: white;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	margin-top: -20px;
+}
+.sec2 .addfilter  h3
+{
+	font-size: 1.7rem;
+	color: #3A7E62;
+	padding-left: 20px;
+}
+
+.sec2 .addfilter button
+{
+	border: none;
+	background-image: linear-gradient(to right,#121e1e, #121e1e);
+	color: white;
+	padding: 10px 60px;
+	margin-left: 40px;
+	border-radius: 20px;
+	letter-spacing: 1px;
+	border: 1px solid #121e1e;
+}
+.sec2 .addfilter .secondpart button
+{
+	margin-top: 40px;
+}
+.sec2 .addfilter select
+{
+	margin-left: 0% !important;
+	width: 40% !important;
+}
+.sec2 .addfilter input
+{
+	width: 80%;
+	margin-left: 5%;
+	border:none;
+	background-color: #f1f1f1;
+	padding: 5px;
+	border-radius: 10px;
+	border-bottom: 2px solid #121e1e;
+}
+.sec2 .addfilter input:focus
+{
+	outline: none;
+	border:1px solid #121e1e;
+}
+.sec2 .addfilter button:hover
+{
+	background-color: white;
+	background-image: none;
+	border: 1px solid #121e1e;
+	color: #121e1e;
+}
+.sec2 .addfilter button:focus
+{
+	outline: none;
+}
+
+.sec2 .filters .individualfilters
+{
+	margin-top: 5vh;
+}
+
+.sec2 .filters .individualfilters .if
+{
+	width: 20%;
+	padding: 10px;
+	margin-left: 3%;
+		background-color: white;
+	background-image: none;
+	border: 1px solid #121e1e;
+	color: #121e1e;
+	border-radius: 20px;
+	margin-bottom: 20px;
+}
+.sec2 .filters .individualfilters .if span:hover
+{
+	cursor: pointer;
+}
+
+
+.sec2 table
+{
+	width: 98%;
+	margin-left: 1%;
+	margin-top: 5vh;
+
+}
+.sec2 table tr th , .sec2 .tablecontents tr th
+{
+	color: white;
+}
+.sec2 table tr td , .sec2 .tablecontents tr td
+{
+	border:1px solid black;
+	font-size: 1rem;
+	text-align: center;
+	padding: 5px 10px;
+	min-width: 100px;
+	border: 1px solid #121e1e;
+}
+
+.sec2 table .head td
+{
+	font-size: 1.1rem;
+	font-weight: bolder;
+	padding: 5px 0px;
+	border: 1px solid #121e1e;
+	background-color: #121e1e;
+	color: white;
+}
+.sec2 .filters span
+{
+	padding-left: 35px;
+	color: #121e1e;
+	font-size: 1.6rem;
+}
+.sec2 .filters select , .sec2 .tablecontents select
+{
+	width: 40%;
+	margin-left: 10%;
+	border: 1px solid #121e1e;
+	padding: 5px;
+	margin-bottom: 20px;
+	margin-top: -25px;
+	border: 1px solid #121e1e;
+	color: #121e1e
+
+}
+
+.addfilter
+{
+	margin-top: 40px;
+}
+
+.sec2 .filters select:focus
+{
+	outline: none;
+
+}
+.next button
+{
+	
+	padding: 10px 40px;
+	width: 40%;
+	margin-left: 30%;
+	background-color: #121e1e;
+	background-image: linear-gradient(to right,#121e1e, #121e1e);
+	margin-bottom: 10vh;
+	font-size: 2rem;
+	color: white;
+	z-index: 999;
+	border-radius: 10px;
+	display: none;
+}
+
+.download button
+{
+	position: fixed;
+	padding: 10px 30px;
+	top: 0;
+	left: 0;
+	background-color: blue;
+	color: white;
+	z-index: 999;
+	display: none;
+}
+
+.download button:focus
+{
+	outline: none;
+}
+
+.nextsection h3
+{
+	text-align: center;
+	margin-top: 30vh;
+}
+
+.portfolio h3
+{
+	text-align: center;
+}
+.portfolio
+{
+	margin-bottom: 20vh;
+}
+
+.tablecontents , .tablefundsus , .tablefundsuser
+{
+	margin-bottom: 20vh;
+}
+.tablefundsus
+{
+	display: none;
+}
+
+#tableuserfooter {
+	text-align: center;
+	margin-bottom: 10vh;
+}
+.nextsection
+{
+	margin-top: -10vh;
+}
+.nextsection h5
+{
+	color: #121e1e;
+	text-align: left;
+	padding-left: 30px;
+	letter-spacing: 1px;
+	font-size: 1.6rem;
+}
+.nextsection h5:hover
+{
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.selectall button
+{
+	background: none;
+	border-radius: 10px;
+	margin-left: 50px;
+	border: 1px solid #121e1e;
+	padding: 10px 20px;
+	color: #121e1e;
+	margin-top: 5vh;
+}
+
+.selectall button:focus
+{
+	outline: none;
+}
+
+@media only print {
+	
+   .portfolio table {
+     width: 80%;
+     height: auto;
+     overflow: visible;
+
+   }
+}

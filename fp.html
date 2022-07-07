@@ -1,0 +1,5863 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fundamental Analysis</title>
+	<link rel="stylesheet" type="text/css" href="fp.css">
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	 <link rel="icon" href="pjfav.png" type="image/png" sizes="64x64">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  	  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  	<meta name="format-detection" content="telephone=no">
+</head>
+<body>
+
+<script>
+function changechoices(x)
+{
+	
+	        choices[0] = "n";
+        choices[1] = "n";
+        choices[2] = "n";
+        choices[3] = "n";
+        choices[4] = "n";
+        choices[5] = "n";
+        choices[6] = "n";
+        choices[7] = "n";
+        choices[8] = "n";
+        choices[9] = "n";
+        choices[10] = "n";
+        choices[11] = "n";
+        choices[12] = "n";
+}
+
+
+
+
+
+
+</script>
+
+
+    <div class="coverscreen">
+    <h4> Please Wait while we are preparing our Data! </h4>
+    </div>
+
+    <h4 id="showingselectedequities"> Selected 0 Equities </h4>
+	
+    <div class="row customnavbar">
+		<div class="col-md-4 logo">
+			 <img src="logo.jpg">
+
+			<div class="profilecontainer">
+				
+				<!-- <h5 id="showloginemail">Not logged in</h5> -->
+			</div>
+		</div>
+		<div class="col-md-4">
+		</div>
+		<!-- <div class="col-md-4 titles">
+			<span onclick="bringlogin()">Logout</span>
+			<span onclick="bringhome()" id="hometitle">Home</span>
+		</div> -->
+
+	</div>
+
+	<div class="loginregion">
+		<div class="row upp upp1">
+			<h4 onclick="closelogin()">X</h4>
+			<h3>Login to try our tools </h3>
+
+		</div>
+		<h5 id="loginremark"> </h5>
+		<input type="email" name="email" placeholder="Enter your Email" id="email">
+		<input type="password" name="password" placeholder="Enter your Password" id="password">
+		<button onclick="login()">Login</button>
+
+		<div class="row upp">
+			<h4 onclick="backtoregister()">Need an account ?</h4>
+		</div>
+
+
+	</div>
+
+	<div class="heroregion">
+		 <img src="bgnew.jpg">
+		<button  onclick="getstarted()">Get Started with Fundamental Analysis</button>
+	</div>
+
+	
+
+	<div class="sec1">
+		
+		<div class="row">
+			<h3> Fundamental Analysis</h3>
+			<div class="hider">
+				<h4> Choose Best Funds according to you</h4>
+				<div class="row">
+					<!-- <div class="col-md-6 col-sm-12 col-xs-12">
+						<button onclick="practiseclicked()">Practise</button>
+					</div> -->
+					<div class="col-md-6 col-sm-12 col-xs-12">
+						<button onclick="practise2clicked()">Practise</button>
+					</div>
+					<div class="col-md-6 col-sm-12 col-xs-12">
+						<button onclick="liveclicked()">Live</button>
+					</div>
+					<!-- <div class="col-md-4 col-sm-12 col-xs-12">
+						<button onclick="generateportfolio()"> Download our suggested funds </button>
+					</div> -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="sec2">
+	<div class="filters">
+		<div class="row">
+			<div class="col-md-12 col-sm-6 col-xs-6">
+
+
+				<div class="row addfilter">
+					<div class="col-md-3 col-sm-12 col-xs-12 firstpart">
+						<button onclick="addfilterbring()">Add Filters</button>
+					</div>
+					<div class="col-md-9 col-sm-12 col-xs-12 secondpart">
+
+					<div class="row">
+						<div class="col-md-6 sectorfilter">
+							<span class="aboveselect"> Sector </span>
+							<select onchange="handlecategory()" id="cateoryselect"> 
+							
+							</select>
+						</div>
+
+						<div class="col-md-6 returnorder">
+							<span>Order by Returns</span>
+							<select id="orderdropdown" onchange="orderbyreturn()">
+								<option value="None">None</option>
+								<option>Ascending</option>
+								<option>Descending</option>
+							</select>
+						</div>
+					</div>
+						<div class="row">
+							<div class="col-md-3 col-sm-12 col-xs-12">
+								<h3>Select category</h3>
+								<select id="individualfiltername"></select>
+							</div>
+							<div class="col-md-3 col-sm-12 col-xs-12">
+								<h3>Select condition</h3>
+								<select id="individualfiltertype">
+									<option>Greater than</option>
+									<option>Less than</option>
+								</select>
+							</div>
+							<div class="col-md-3 col-sm-12 col-xs-12">
+								<h3>Enter Value</h3>
+								<input type="number" name="individualfiltervalue" id="individualfiltervalue">
+							</div>
+							<div class="col-md-3 col-sm-12 col-xs-12">
+								<button onclick="passthisfilter()">Ok</button>
+							</div>
+
+						</div>
+						
+						
+						
+					</div>
+				</div>
+
+				<div class="row individualfilters">
+						
+					
+				</div>
+			</div>
+
+		
+
+			
+			
+
+
+		</div>
+	</div>
+
+		<div class="datafor">
+			<h2 id="dataforlabel"> Data : May 2020</h2>
+		</div>
+
+		<div class="row selectall">
+		<button onclick="checkedall()">Select All</button>
+
+		<h3 id="showingfundscount">Showing 1000 Equities</h3>
+
+		</div>
+
+		<div class="row">
+			<table>
+				<tr class="head">
+		<!-- 			<td> Scheme Name </td>
+					<td> Category </td>
+					<td> AUM </td>
+					<td> Large Cap </td>
+					<td> Mid Cap </td>
+					<td> Small Cap </td>
+					<td> Expense Ratio </td>
+					<td> PE Ratio </td>
+					<td> 1 YR Average </td>
+					<td> CAGR </td>
+					<td> Rolling Return </td>
+					<td> Standard Deviation </td>
+					<td> Negative Count </td>
+					<td> - Mean Return </td>
+					<td> - Standard Deviation </td>
+					<td> Information Ratio </td>
+					<td> Beta </td> -->
+				</tr>
+				<div class="tablecontents">
+					<tr>
+					
+						<!-- <td> X </td>
+						<td> Large Cap </td>
+						<td> 12.3 </td>
+						<td> 2.3 </td>
+						<td> X </td>
+						<td> Large Cap </td>
+						<td> 12.3 </td>
+						<td> 2.3 </td>
+						<td> X </td>
+						<td> Large Cap </td>
+						<td> 12.3 </td>
+						<td> 2.3 </td>
+						<td> X </td>
+						<td> Large Cap </td>
+						<td> 12.3 </td>
+						<td> 2.3 </td>
+						<td> 2.3 </td> -->
+
+					</tr>
+				</div>
+
+			</table>
+        </div>
+
+
+
+        <div class="next">
+		<button onclick="nextpressed()"> Next </button>
+	</div>
+
+        <div class="nextsection">
+        	<h5 onclick="generateportfolio()"> Download Data </h5>
+
+            <h3> Equities you selected </h3>
+            <div class="tablefundsuser"> </div>
+
+             <h4 id="tableuserfooter"> </h4>
+
+             <!-- <h3> Funds we selected </h3> -->
+            <!-- <div class="tablefundsus"> </div> -->
+        </div>
+
+
+        <div class="portfolio">
+
+
+
+        </div>
+
+
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+	<!-- <script src="jquery.min.js"></script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script>
+		AOS.init();
+	</script>
+
+	
+
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  closelogin();
+
+		function closelogin()
+		{
+			$(".loginregion").css("display","none");
+		}
+		function bringlogin()
+		{
+			$(".loginregion").css("display","block");
+		}
+		function gotomf()
+		{
+			window.location.href = "mf.html";
+		}
+		function gotohc()
+		{
+			window.location.href = "ppt.html";
+		}
+		function backtologin()
+		{
+			clearfields();
+			 $(".loginregion").css("display","block");
+			  $(".signupregion").css("display","none");
+		}
+
+		function backtoregister()
+		{
+			clearfields();
+			 $(".loginregion").css("display","none");
+			  $(".signupregion").css("display","block");
+		}
+
+
+		function clearfields()
+		{
+			$("#email").val("");
+			$("#password").val("");
+			$("#remail").val("");
+			$("#rpassword").val("");
+			$("#rconfirmpassword").val("");
+		}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+var firebaseConfig2 = {
+  apiKey: "AIzaSyBTNYxuQCS6LA11Jbc9bjfq8GW1-PuL-po",
+  authDomain: "suskanmaster.firebaseapp.com",
+  projectId: "suskanmaster",
+  databaseURL: "https://suskanmaster-e8221.firebaseio.com/",
+  storageBucket: "suskanmaster.appspot.com",
+  messagingSenderId: "356742756849",
+  appId: "1:356742756849:web:211f0c9fd657a9c77a6c50"
+  };
+  
+  const sc = firebase.initializeApp(firebaseConfig2);
+
+var firebaseConfig = {
+    apiKey: "AIzaSyCcm2TXTetfEBLMoY70q-e8qoZEquQ4x3Q",
+    authDomain: "fundamentalanalysis-80084.firebaseapp.com",
+    databaseURL: "https://fundamentalanalysis-80084.firebaseio.com",
+    projectId: "fundamentalanalysis-80084",
+    storageBucket: "",
+    messagingSenderId: "695868239246",
+    appId: "1:695868239246:web:312d7b62cd7feb2fd348df"
+  };
+  const main = firebase.initializeApp(firebaseConfig, 'secondary');
+
+
+
+
+
+
+sc.auth().onAuthStateChanged(function(user) {
+
+  	if (user) {
+	    var uid = user.uid;
+	 
+	    $("#logintitle").text("Logout");
+	     if(user.email === "avasani187@gmail.com") {
+						    	$("#showloginemail").text("Student login");
+						    }
+						    else {
+						    	$("#showloginemail").text("Logged in as "+user.email);
+						    }
+
+	  } else {
+		  $("#logintitle").text("Login");
+		  $("#")
+	  }
+});
+
+
+
+
+
+
+
+
+function getstarted()
+{
+	 bringtosec1();
+}
+
+
+function bringlogin()
+{
+
+		sc.auth().onAuthStateChanged(function(user) {
+
+  		if (user) {
+  				sc.auth().signOut()
+  				.then(function() {
+    				
+    				$("#logintitle").text("Login");
+    				window.location.href= "index.html?logout=true";
+  				})
+  				.catch(function(error) {
+   					 alert("Could not sign you out.");
+  				});
+	 	 } else { 
+	 	 	window.location.href= "index.html?logout=false";
+	 	 }
+		});
+}
+
+
+function bringhome()
+{
+	window.location.href= "index.html?logout=false";
+}
+
+function login()
+{
+	$("#loginremark").text("");
+	var email = $("#email").val();
+	var password = $("#password").val();
+	email = email.toLowerCase();
+	email=email.trim();
+
+
+
+
+	// var request = new XMLHttpRequest();
+	// 			request.open('GET', 'https://volatilitygame.com/site-manager/androidconnect.php?email='+email+'&password='+password, true);
+	// 			request.onload = function() {
+	// 				var data = JSON.parse(this.response);
+ // 					console.log(data);
+	// 			}
+	// 			request.send();
+
+	
+
+	sc.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+ 
+  		var errorCode = error.code;
+  		var errorMessage = error.message;
+  		
+  // 		var request = new XMLHttpRequest();
+		// request.open('GET', 'https://volatilitygame.com/site-manager/androidconnect.php?email='+email+'&password='+password, true);
+		// request.onload = function() {
+		// 	var data = JSON.parse(this.response);
+ 	// 		if(data.success === true || data.success === "true")
+ 	// 		{
+ 	// 			firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+		// 		  	// Handle Errors here.
+		// 		  	var errorCode = error.code;
+		// 		  	var errorMessage = error.message;
+		// 		  	$("#loginremark").text(errorMessage);
+
+		// 		});
+		// 		firebase.auth().onAuthStateChanged(function(user) {
+	
+		// 			  	if (user) {
+		// 			  		if(user.emailVerified === false)
+		// 					{
+		// 						$("#loginremark").text("Make sure your email is verified.");
+		// 						firebase.auth().signOut()
+  // 								.then(function() {
+  // 								})
+  // 								.catch(function(error) {
+  // 								});
+		// 					}
+		// 				    var uid = user.uid;
+		// 				    console.log(uid);
+		// 				    $("#logintitle").text("Logout");
+		// 				    $(".sec1").css("display","block");
+		// 				    $(".loginregion").css("display","none");
+
+		// 				  } else {
+
+		// 				  	$(".loginregion").css("display","block");
+		// 				  	$("#logintitle").text("Login");
+		// 				    $(".sec1").css("display","none");
+						   
+		// 				  }
+		// 		});
+						
+ 	// 		}
+ 	// 		else
+ 	// 		{
+ 	// 			 $("#loginremark").text("Login Failed ! Kindly check your email/password.");
+ 	// 		}
+		// }
+		// request.send();
+
+
+  		
+
+	});
+	sc.auth().onAuthStateChanged(function(user) {
+	
+  	if (user) {
+  		
+  // 		if(user.emailVerified === false)
+		// {
+		// 	$("#loginremark").text("Make sure your email is verified.");
+		// 	firebase.auth().signOut()
+  // 				.then(function() {
+  // 				})
+  // 				.catch(function(error) {
+  // 				});
+		// 	return;
+		// }
+	    var uid = user.uid;
+	    // console.log(uid);
+
+	    $("#logintitle").text("Logout");
+	    $(".sec1").css("display","block");
+	    $(".loginregion").css("display","none");
+	     if(user.email === "avasani187@gmail.com") {
+						    	$("#showloginemail").text("Student login");
+						    }
+						    else {
+						    	$("#showloginemail").text("Logged in as "+user.email);
+						    }
+
+	  } else {
+	  
+	  	$("#loginremark").text("Incorrect Email/Password Combination.");
+
+	  	$(".loginregion").css("display","block");
+	  	$("#logintitle").text("Login");
+	    $(".sec1").css("display","none");
+	    
+	  }
+	});
+	
+}
+
+
+function register()
+{
+	$("#registerremark").text("");
+	var email = $("#remail").val();
+	var password = $("#rpassword").val();
+	var cpassword = $("#rconfirmpassword").val();
+	email = email.toLowerCase();
+	email=email.trim();
+	if (password !== cpassword) {
+		$("#registerremark").text("Both passwords should match");
+		return;
+	}
+
+	firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+  	// Handle Errors here.
+  	var errorCode = error.code;
+  	var errorMessage = error.message;
+  	$("#registerremark").text(errorMessage);
+
+	});
+
+	firebase.auth().onAuthStateChanged(function(user) {
+  	if (user) {
+	    var uid = user.uid;
+	    // console.log(uid);
+	    var request = new XMLHttpRequest();
+request.open('GET', 'https://volatilitygame.com/site-manager/androidregister.php?email='+email+'&password='+password+'&mobile=0&city=none&indianglobal=none&name=none', true);
+		request.onload = function() {
+			var data = JSON.parse(this.response);
+			
+		}
+		request.send();
+	    firebase.auth().signOut()
+  				.then(function() {
+  				})
+  				.catch(function(error) {
+  				});
+	    user.sendEmailVerification().then(function() {
+ 				   	$("#registerremark").text("An Email has been sent to your email id, please verify and then login.");
+ 				   	$(".loginregion").css("display","none");
+ 				   	// $(".signupregion").css("display","none");
+		}).catch(function(error) {
+  			// An error happened.
+  		});
+	    // $("#logintitle").text("Logout");
+	    // $(".sec1").css("display","block");
+	    $(".loginregion").css("display","none");
+
+	  } else {
+	  	$(".loginregion").css("display","block");
+	  	$("#logintitle").text("Login");
+	    $(".sec1").css("display","none");
+	  }
+	});
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+var bse_symbol = [];
+var company_name = [];
+var np = [];
+var de = [];
+var ronw = [];
+var sales_growth = [];
+var np_growth = [];
+var pledged = [];
+var inst = [];
+var price = [];
+var f52_week_hl = [];
+var trail_pe_ratio = [];
+var sector = [];
+var oldreturn = [];
+var actualrank = [];
+var isfundselected = [];
+var previousyearreturn = [];
+
+
+var bookvalp = [];
+var companyp = [];
+var debttoequityp = [];
+var divyieldp = [];
+var freecashflowp = [];
+var instholdingp = [];
+var operatingprofitgrowthp = [];
+var patp = [];
+var patgrowthp = [];
+var peratiop = [];
+var pledgep = [];
+var prevyearreturnp = [];
+var roep = [];
+var sectorp = [];
+var sectorperformancep = [];
+var symbolp = [];
+var tradeablevolumep = [];
+
+
+
+
+var filteredfunds = [];
+//loadfunds("Large Cap");
+var ranks = [];
+var choices = ['n','n','n','n','n','n','n','n','n','n','n','n','n'];
+var allfundswithselectedcategories = [];
+var selectedcategoriesnew = [];
+
+
+
+var allfundsfilter = ["NP","DE","RONW","SALES_GROWTH","NP_GROWTH","PLEDGED","INST","PRICE","52_WEEK_HL","TRAIL_PE_RATIO","RETURN"];
+
+var allfundsfilterforpractise2 = ["BOOKVALUE","DEBTTOEQUITY","DIVIDENDYIELD","FREECASHFLOW","INST HOLDING CHANGE","OPERATING PROFIT GROWTH","PAT","PAT GROWTH","PE RATIO","PLEDGE","PREVIOUS YEAR RETURN","ROE","SECTOR PERFORMANCE","TRADEABLE VOLUME"];
+var selectedfundsfilter = [];
+
+prepareselectfilters();
+
+
+function bringtosec1()
+{
+	$(".sec1").css("display","block");
+	
+
+	var $container = $("html,body");
+	var $scrollTo = $('.sec1');
+
+	$container.animate({scrollTop: $scrollTo.offset().top - $container.offset().top - 100 +
+	$container.scrollTop(), scrollLeft: 0},700);
+}
+
+
+function addfilterbring()
+{
+	$(".addfilter .secondpart").css("margin-left",0);
+}
+function prepareselectfilters()
+{
+
+
+	if (selectedmode === "practise2") {
+
+		var contents = "";
+		for (var i = 0; i < allfundsfilterforpractise2.length; i++) {
+			if(selectedfundsfilter[allfundsfilterforpractise2[i]] === "undefined" || selectedfundsfilter[allfundsfilterforpractise2[i]] === undefined)
+			{
+				contents = contents + "<option>"+allfundsfilterforpractise2[i]+"</option>";
+			}
+			
+		}
+		$("#individualfiltername").html(contents);
+	}
+	else
+	{
+
+		var contents = "";
+		for (var i = 0; i < allfundsfilter.length; i++) {
+			if(selectedfundsfilter[allfundsfilter[i]] === "undefined" || selectedfundsfilter[allfundsfilter[i]] === undefined)
+			{
+				contents = contents + "<option>"+allfundsfilter[i]+"</option>";
+			}
+			
+		}
+		$("#individualfiltername").html(contents);
+	}
+}
+
+
+
+
+
+function passthisfilter()
+{
+	$("#orderdropdown").val("None");
+	var fn  = $("#individualfiltername").val();
+	var fc  = $("#individualfiltertype").val();
+	var fv = $("#individualfiltervalue").val();
+
+
+	if(fv === "")
+	{
+		return;
+	}
+
+	var element  = {"condition":fc,"value":fv,"name":fn};
+	selectedfundsfilter[fn] = element;
+	
+	prepareselectfilters();
+	
+	var oc = $(".individualfilters").html();
+	var nc = "<div class='col-md-4 col-sm-12 col-xs-12 if' id='"+fn+"'> "+fn+" "+fc+" "+fv+"<span id='' onclick=removefilter('"+fn+"')> &times;</span></div>";
+	var tc = oc + nc;
+	
+	$(".individualfilters").html(tc);
+	$("#individualfiltervalue").val(0);
+	
+	onlykeepwantedfunds();
+	verytopload = true;
+	$(".addfilter .secondpart").css("margin-left","-100vw");
+	
+}
+
+// generatedata();
+
+function removefilter(id)
+{
+	alert(id);
+	selectedfundsfilter[id] = "undefined";
+	selectedfundsfilter[id] = undefined;
+	var contents = "";
+	for (var i = 0; i < allfundsfilter.length; i++) {
+		if(selectedfundsfilter[allfundsfilter[i]] === "undefined" || selectedfundsfilter[allfundsfilter[i]] === undefined)
+		{
+
+		}
+		else
+		{
+			contents = contents +"<div class='col-md-4 col-sm-12 col-xs-12 if' id='"+selectedfundsfilter[allfundsfilter[i]]["name"]+"'> "+selectedfundsfilter[allfundsfilter[i]]["name"]+" "+selectedfundsfilter[allfundsfilter[i]]["condition"]+" "+selectedfundsfilter[allfundsfilter[i]]["value"]+"<span id='' onclick=removefilter('"+selectedfundsfilter[allfundsfilter[i]]["name"]+"')> &times;</span></div>";
+		}
+	}
+
+
+	$(".individualfilters").html(contents);
+	
+	prepareselectfilters();
+	wantedfunds = wantedfunds.splice(0,wantedfunds.length);
+	while(wantedfunds.length > 0) {
+    wantedfunds.pop();
+	}
+	
+	onlykeepwantedfunds();
+		
+	
+}
+
+
+
+
+
+function filterfundslatest()
+{
+	for (var i = 0; i < allfundsfilter.length; i++) {
+		if(selectedfundsfilter[allfundsfilter[i]] === "undefined" || selectedfundsfilter[allfundsfilter[i]] === undefined)
+		{
+
+		}
+		else
+		{
+			contents = contents +"<div class='col-md-4 col-sm-12 col-xs-12 if' id='"+selectedfundsfilter[allfundsfilter[i]]["name"]+"'> "+selectedfundsfilter[allfundsfilter[i]]["name"]+" "+selectedfundsfilter[allfundsfilter[i]]["condition"]+" "+selectedfundsfilter[allfundsfilter[i]]["value"]+"<span id='' onclick=removefilter('"+selectedfundsfilter[allfundsfilter[i]]["name"]+"')> &times;</span></div>";
+		}
+	}
+
+}
+
+
+
+var wantedfunds = [];
+var wantedfundslength = 0;
+var fundsarr = [];
+var firstload = false;
+var tempfundsarr = [];
+var verytopload = false;
+
+
+function orderbyreturn()
+{
+	
+	var selectBox = document.getElementById("orderdropdown");
+   	var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+   	if(wantedfunds.length === 0)
+	{
+		fundsarr = filteredfunds.slice();
+		wantedfunds = filteredfunds.slice();
+	}
+	else
+	{
+		fundsarr = wantedfunds.slice();
+	}
+
+	if(selectedValue === "None")
+	{
+		onlykeepwantedfunds();
+	}
+	else if(selectedValue === "Ascending")
+	{
+		 tempfundsarr = fundsarr.slice();
+
+		 if(selectedmode === "practise")
+		 {
+
+		 for(var i=0;i<tempfundsarr.length;i++)
+		 {
+		 	for(var j=0;j<tempfundsarr.length-1-i;j++)
+		 	{
+		 		if(selectedmode === "practise2") {
+		 			if(tempfundsarr[j].previousyearreturn > tempfundsarr[j+1].previousyearreturn) {
+		 				var k = Object.assign({},tempfundsarr[j]);
+		 			tempfundsarr[j] = Object.assign({},tempfundsarr[j+1]);
+		 			tempfundsarr[j+1] = Object.assign({},k);
+		 			}
+		 		}
+		 		else {
+		 			if(((tempfundsarr[j].price - tempfundsarr[j].previousyearreturn)/tempfundsarr[j].previousyearreturn ) > ((tempfundsarr[j+1].price - tempfundsarr[j+1].previousyearreturn)/tempfundsarr[j+1].previousyearreturn ))
+		 		{
+		 			var k = Object.assign({},tempfundsarr[j]);
+		 			tempfundsarr[j] = Object.assign({},tempfundsarr[j+1]);
+		 			tempfundsarr[j+1] = Object.assign({},k);
+		 		}
+		 		}
+
+		 		
+		 	}
+		 }
+		}
+		else if(selectedmode === "practise2")
+		{
+			for(var i=0;i<tempfundsarr.length;i++)
+		 {
+		 	for(var j=0;j<tempfundsarr.length-1-i;j++)
+		 	{
+		 		i
+		 			if(tempfundsarr[j].previousyearreturn > tempfundsarr[j+1].previousyearreturn) {
+		 				var k = Object.assign({},tempfundsarr[j]);
+		 			tempfundsarr[j] = Object.assign({},tempfundsarr[j+1]);
+		 			tempfundsarr[j+1] = Object.assign({},k);
+		 			}
+		 		
+		 	}
+		 }
+		}
+		else
+		{
+			 for(var i=0;i<tempfundsarr.length;i++)
+		 {
+		 	for(var j=0;j<tempfundsarr.length-1-i;j++)
+		 	{
+		 		if(((tempfundsarr[j].price - tempfundsarr[j].oldreturn)/tempfundsarr[j].oldreturn ) > ((tempfundsarr[j+1].price - tempfundsarr[j+1].oldreturn)/tempfundsarr[j+1].oldreturn ))
+		 		{
+		 			var k = Object.assign({},tempfundsarr[j]);
+		 			tempfundsarr[j] = Object.assign({},tempfundsarr[j+1]);
+		 			tempfundsarr[j+1] = Object.assign({},k);
+		 		}
+		 	}
+		 }
+		}
+
+	}
+	else if(selectedValue === "Descending")
+	{
+		 tempfundsarr = fundsarr.slice();
+		 		 if(selectedmode === "practise")
+		 {
+
+		for(var i=0;i<tempfundsarr.length;i++)
+		 {
+		 	for(var j=0;j<tempfundsarr.length-1-i;j++)
+		 	{
+		 		if(((tempfundsarr[j].price - tempfundsarr[j].previousyearreturn)/tempfundsarr[j].previousyearreturn ) < ((tempfundsarr[j+1].price - tempfundsarr[j+1].previousyearreturn)/tempfundsarr[j+1].previousyearreturn ))
+		 		{
+		 			var k = Object.assign({},tempfundsarr[j]);
+		 			tempfundsarr[j] = Object.assign({},tempfundsarr[j+1]);
+		 			tempfundsarr[j+1] = Object.assign({},k);
+		 		}
+		 	}
+		 }
+
+		}
+		else if(selectedmode === "practise2")
+		{
+			for(var i=0;i<tempfundsarr.length;i++)
+		 {
+		 	for(var j=0;j<tempfundsarr.length-1-i;j++)
+		 	{
+		 		i
+		 			if(tempfundsarr[j].previousyearreturn < tempfundsarr[j+1].previousyearreturn) {
+		 				var k = Object.assign({},tempfundsarr[j]);
+		 			tempfundsarr[j] = Object.assign({},tempfundsarr[j+1]);
+		 			tempfundsarr[j+1] = Object.assign({},k);
+		 			}
+		 		
+		 	}
+		 }
+		}
+		else
+		{
+			for(var i=0;i<tempfundsarr.length;i++)
+		 {
+		 	for(var j=0;j<tempfundsarr.length-1-i;j++)
+		 	{
+		 		if(((tempfundsarr[j].price - tempfundsarr[j].oldreturn)/tempfundsarr[j].oldreturn ) < ((tempfundsarr[j+1].price - tempfundsarr[j+1].oldreturn)/tempfundsarr[j+1].oldreturn ))
+		 		{
+		 			var k = Object.assign({},tempfundsarr[j]);
+		 			tempfundsarr[j] = Object.assign({},tempfundsarr[j+1]);
+		 			tempfundsarr[j+1] = Object.assign({},k);
+		 		}
+		 	}
+		 }
+		}
+	}
+
+
+	for(var j=0;j<tempfundsarr.length;j++)
+	{
+		var a = tempfundsarr[j].price;
+		var b = tempfundsarr[j].previousyearreturn;
+
+		var ret = parseFloat((a-b)/b * 100);
+		console.log(ret);
+
+		// console.log((((tempfundsarr[j].price - tempfundsarr[j].previousyearreturn)/tempfundsarr[j].previousyearreturn ) * 100.0).toFixed(2));
+	}
+
+	painttableorderbyreturn();
+   	
+}
+
+
+
+
+function painttableorderbyreturn()
+{
+
+	var content = "";
+	if(selectedmode === "latest")
+	{
+		 content = "<table><tbody><tr class='head'>"+
+        "<td> Select Equity </td>"+
+        "<td> Company Name </td>"+
+        "<td> NP   </td>"+
+        
+        "<td> DE  </td>"+
+        "<td> RONW   </td>"+
+        
+        "<td> Sales Growth </td>"+
+        "<td> NP Growth  </td>"+
+        "<td> Pledged   </td>"+
+        "<td> Inst Holding   </td>"+
+        "<td> Price   </td>"+
+        "<td> 52 week HL   </td>"+
+        "<td> Trail PE ratio  </td>"+
+        "<td> Sector </td>"+
+         "<td> Prev Year Return </td>"+
+        
+        "</tr>";
+	}
+	else if(selectedmode === "practise2")
+	{
+		var content = "<table><tbody><tr class='head'>"+
+        "<td> Select Fund </td>"+
+        
+        "<td> Company </td>"+
+        "<td> Book Value  </td>"+
+		"<td> Debt to Equity</td>"+
+        "<td> Dividend Yield </td>"+
+  		"<td> Free cash flow </td>"+
+        "<td> Inst holding change %</td>"+
+        "<td> Operating profit growth % </td>"+
+        "<td> Pat</td>"+
+        "<td> Pat Growth %</td>"+
+        "<td> PE Ratio </td>"+
+        "<td> Pledge %</td>"+
+        "<td> Previous Year Return %</td>"+
+        "<td> Roe % </td>"+
+        "<td> Sector </td>"+
+        "<td> Sector Performance %</td>"+
+        "<td> Tradaeble Volume </td>"+
+        "</tr>";
+
+	}
+	else
+	{
+		 content = "<table><tbody><tr class='head'>"+
+        "<td> Select Equity </td>"+
+        "<td> Company Name </td>"+
+        "<td> NP   </td>"+
+        
+        "<td> DE  </td>"+
+        "<td> RONW   </td>"+
+        
+        "<td> Sales Growth </td>"+
+        "<td> NP Growth  </td>"+
+        "<td> Pledged   </td>"+
+        "<td> Inst Holding   </td>"+
+        "<td> Price   </td>"+
+        "<td> 52 week HL   </td>"+
+        "<td> Trail PE ratio  </td>"+
+        "<td> Sector </td>"+
+        "<td> Prev Year Return </td>"+
+        "</tr>";
+	}
+	 
+    $(".tablecontents").html(content);
+
+
+    if (selectedmode === "practise2")
+    {
+
+        					for(var i = 0; i<tempfundsarr.length;i++)
+        					{
+
+        							if(tempfundsarr[i].isfundselected === true  ) 
+								{
+									// console.log("Will go here");
+												content = content + "<tr>"+
+													"<td>" + "<input type='checkbox' id='chkfnd"+i+"' name='"+tempfundsarr[i].company+"' onclick=selectAllp2('"+i+"','f') checked>" + "</td>"+
+													
+							                        "<td>" +tempfundsarr[i].company +"</td>"+
+							                        "<td>"+ tempfundsarr[i].bookvalue + "</td>"+
+													"<td>"+ tempfundsarr[i].debttoequity  +"</td>"+
+							                        "<td>"+ tempfundsarr[i].dividendyield + "</td>"+
+							                   		"<td>" + tempfundsarr[i].freecashflow +"</td>"+
+							                        "<td>" + tempfundsarr[i].instholdingcharge +"</td>"+
+							                        "<td>" + tempfundsarr[i].operatingprofitgrowth +"</td>"+
+							                        "<td>" + tempfundsarr[i].pat +"</td>"+
+							                        "<td>" + tempfundsarr[i].patgrowth +"</td>"+
+							                        "<td>" + tempfundsarr[i].peratio +"</td>"+
+							                        "<td>" + tempfundsarr[i].pledge +"</td>"+
+							                        "<td>"+ tempfundsarr[i].previousyearreturn+ "</td>"+
+							                        "<td>"+ tempfundsarr[i].roe + " %</td>"+
+							                        "<td>" + tempfundsarr[i].sector +"</td>"+
+							                        "<td>"+ tempfundsarr[i].sectorperformance+ "</td>"+
+							                        "<td>"+ tempfundsarr[i].tradeablevolume + " %</td>"+
+													"</tr>";
+								}
+									else 
+								{
+									// console.log("Will go here");
+												content = content + "<tr>"+
+													"<td>" + "<input type='checkbox' id='chkfnd"+i+"' name='"+tempfundsarr[i].company+"' onclick=selectAllp2('"+i+"','f')>" + "</td>"+
+													
+							                        "<td>" +tempfundsarr[i].company +"</td>"+
+							                        "<td>"+ tempfundsarr[i].bookvalue + "</td>"+
+													"<td>"+ tempfundsarr[i].debttoequity  +"</td>"+
+							                        "<td>"+ tempfundsarr[i].dividendyield + "</td>"+
+							                   		"<td>" + tempfundsarr[i].freecashflow +"</td>"+
+							                        "<td>" + tempfundsarr[i].instholdingcharge +"</td>"+
+							                        "<td>" + tempfundsarr[i].operatingprofitgrowth +"</td>"+
+							                        "<td>" + tempfundsarr[i].pat +"</td>"+
+							                        "<td>" + tempfundsarr[i].patgrowth +"</td>"+
+							                        "<td>" + tempfundsarr[i].peratio +"</td>"+
+							                        "<td>" + tempfundsarr[i].pledge +"</td>"+
+							                        "<td>"+ tempfundsarr[i].previousyearreturn+ "</td>"+
+							                        "<td>"+ tempfundsarr[i].roe + " %</td>"+
+							                        "<td>" + tempfundsarr[i].sector +"</td>"+
+							                        "<td>"+ tempfundsarr[i].sectorperformance+ "</td>"+
+							                        "<td>"+ tempfundsarr[i].tradeablevolume + " %</td>"+
+													"</tr>";
+								}
+							}
+
+					
+    }
+    else {
+    		for(var i =0;i<tempfundsarr.length;i++)
+	{
+	
+
+		
+
+		
+		var npt = tempfundsarr[i].np;
+
+                                if (npt === -1000 || npt === -100000)
+                                {
+                                        npt = "NA";
+                                }
+                                else
+                                {
+                                        npt = npt;
+                                }
+
+                                var det = tempfundsarr[i].de;
+                                if (det === -1000 || det === -100000)
+                                {
+                                        det = "NA";
+                                }
+                                else
+                                {
+                                        det = det;
+                                }
+
+                                var ronwt = tempfundsarr[i].ronw;
+                                if (ronwt === -1000 || ronwt === -100000)
+                                {
+                                        ronwt = "NA";
+                                }
+                                else
+                                {
+                                        ronwt = ronwt;
+                                }
+
+                                var sales_growtht = tempfundsarr[i].sales_growth;
+
+                                if (sales_growtht === -1000 || sales_growtht === -100000)
+                                {
+                                        sales_growtht = "NA";
+                                }
+                                else
+                                {
+                                        sales_growtht = sales_growtht;
+                                }
+
+                                var np_growtht = tempfundsarr[i].np_growth;
+                                if (np_growtht === -1000 || np_growtht === -100000)
+                                {
+                                        np_growtht = "NA";
+                                }
+                                else
+                                {
+                                        np_growtht = np_growtht;
+                                }
+
+                                var pledgedt = tempfundsarr[i].pledged;
+                                if (pledgedt === -1000 || pledgedt === -100000)
+                                {
+                                        pledgedt = "NA";
+                                }
+                                else
+                                {
+                                        pledgedt = pledgedt;
+                                }
+
+                                var instt = tempfundsarr[i].inst;
+                                if (instt === -1000 || instt === 100000)
+                                {
+                                        instt = "NA";
+                                }
+                                else
+                                {
+                                        instt = instt;
+                                }
+
+                                var pricet = tempfundsarr[i].price;
+                                if (pricet === -1000 || pricet === -1000)
+                                {
+                                        pricet = "NA";
+                                }
+                                else
+                                {
+                                        pricet = pricet;
+                                }
+
+                                var f52_week_hlt = tempfundsarr[i].f52_week_hl;
+                                if (f52_week_hlt === -1000 || f52_week_hlt === -100000)
+                                {
+                                        f52_week_hlt = "NA";
+                                }
+                                else
+                                {
+                                        f52_week_hlt = f52_week_hlt;
+                                }
+
+                                var trail_pe_ratiot = tempfundsarr[i].trail_pe_ratio;
+                                if (trail_pe_ratiot === -1000 || trail_pe_ratiot === -100000)
+                                {
+                                        trail_pe_ratiot = "NA";
+                                }
+                                else
+                                {
+                                        trail_pe_ratiot = trail_pe_ratiot;
+                                }
+
+
+                        
+
+
+
+            if(selectedmode === "practise")
+            {
+
+
+            	if(tempfundsarr[i].isfundselected === true && parseInt(tempfundsarr[i].previousyearreturn) !== 0 ) 
+								{
+									// console.log("Will go here");
+												content = content + "<tr>"+
+													"<td>" + "<input type='checkbox' id='chkfnd"+i+"' name='"+tempfundsarr[i].bse_symbol+"' onclick=selectAll('"+i+"','f') checked>" + "</td>"+
+													
+							                        "<td>" +tempfundsarr[i].company_name +"</td>"+
+							                        "<td>"+ npt+ "</td>"+
+													"<td>"+ det +"</td>"+
+							                        "<td>"+ ronwt+ "</td>"+
+							                   		"<td>" + sales_growtht+"</td>"+
+							                        "<td>" + np_growtht+"</td>"+
+							                        "<td>" + pledgedt+"</td>"+
+							                        "<td>" + instt+"</td>"+
+							                        "<td>" + pricet+"</td>"+
+							                        "<td>" + f52_week_hlt+"</td>"+
+							                        "<td>" + trail_pe_ratiot+"</td>"+
+							                        "<td>"+ tempfundsarr[i].sector+ "</td>"+
+							                      "<td>"+ (((tempfundsarr[i].price - tempfundsarr[i].previousyearreturn)/tempfundsarr[i].previousyearreturn ) * 100.0).toFixed(2)+ "% </td>"+
+													"</tr>";
+								}
+									else if(tempfundsarr[i].isfundselected === true && parseInt(tempfundsarr[i].previousyearreturn) === 0 && parseInt(tempfundsarr[i].previousyearreturn) !== 0 ) 
+								{
+									// console.log("Will go here");
+												content = content + "<tr>"+
+													"<td>" + "<input type='checkbox' id='chkfnd"+i+"' name='"+tempfundsarr[i].bse_symbol+"' onclick=selectAll('"+i+"','f') checked>" + "</td>"+
+													
+							                        "<td>" +tempfundsarr[i].company_name +"</td>"+
+							                        "<td>"+ npt+ "</td>"+
+													"<td>"+ det +"</td>"+
+							                        "<td>"+ ronwt+ "</td>"+
+							                   		"<td>" + sales_growtht+"</td>"+
+							                        "<td>" + np_growtht+"</td>"+
+							                        "<td>" + pledgedt+"</td>"+
+							                        "<td>" + instt+"</td>"+
+							                        "<td>" + pricet+"</td>"+
+							                        "<td>" + f52_week_hlt+"</td>"+
+							                        "<td>" + trail_pe_ratiot+"</td>"+
+							                        "<td>"+ tempfundsarr[i].sector+ "</td>"+
+							                          "<td>"+ (((tempfundsarr[i].price - tempfundsarr[i].previousyearreturn)/tempfundsarr[i].price ) * 100.0).toFixed(2)+ " %</td>"+
+													"</tr>";
+								}
+								else if(parseInt(tempfundsarr[i].previousyearreturn) !== 0 )
+								{
+												content = content + "<tr>"+
+													"<td>" + "<input type='checkbox' id='chkfnd"+i+"' name='"+tempfundsarr[i].bse_symbol+"' onclick=selectAll('"+i+"','f')>" + " </td>"+
+													
+							                        "<td>" +tempfundsarr[i].company_name +"</td>"+
+							                        "<td>"+ npt+ "</td>"+
+													"<td>"+ det +"</td>"+
+							                        "<td>"+ ronwt+ "</td>"+
+							                   		"<td>" + sales_growtht+"</td>"+
+							                        "<td>" + np_growtht+"</td>"+
+							                        "<td>" + pledgedt+"</td>"+
+							                        "<td>" + instt+"</td>"+
+							                        "<td>" + pricet+"</td>"+
+							                        "<td>" + f52_week_hlt+"</td>"+
+							                        "<td>" + trail_pe_ratiot+"</td>"+
+							                        "<td>"+ tempfundsarr[i].sector+ "</td>"+
+							                          "<td>"+ (((tempfundsarr[i].price - tempfundsarr[i].previousyearreturn)/tempfundsarr[i].previousyearreturn ) * 100.0).toFixed(2)+ " %</td>"+
+													"</tr>";
+								}
+							
+            }
+            else
+            {
+
+
+            	if(tempfundsarr[i].isfundselected === true && parseInt(tempfundsarr[i].oldreturn) !== 0 ) 
+								{
+									// console.log("Will go here");
+												content = content + "<tr>"+
+													"<td>" + "<input type='checkbox' id='chkfnd"+i+"' name='"+tempfundsarr[i].bse_symbol+"' onclick=selectAll('"+i+"','f') checked>" + "</td>"+
+													
+							                        "<td>" +tempfundsarr[i].company_name +"</td>"+
+							                        "<td>"+ npt+ "</td>"+
+													"<td>"+ det +"</td>"+
+							                        "<td>"+ ronwt+ "</td>"+
+							                   		"<td>" + sales_growtht+"</td>"+
+							                        "<td>" + np_growtht+"</td>"+
+							                        "<td>" + pledgedt+"</td>"+
+							                        "<td>" + instt+"</td>"+
+							                        "<td>" + pricet+"</td>"+
+							                        "<td>" + f52_week_hlt+"</td>"+
+							                        "<td>" + trail_pe_ratiot+"</td>"+
+							                        "<td>"+ tempfundsarr[i].sector+ "</td>"+
+							                        "<td>"+ (((tempfundsarr[i].price - tempfundsarr[i].oldreturn)/tempfundsarr[i].oldreturn ) * 100.0).toFixed(2)+ " %</td>"+
+							                      
+													"</tr>";
+								}
+									else if(tempfundsarr[i].isfundselected === true && parseInt(tempfundsarr[i].oldreturn) === 0 && parseInt(tempfundsarr[i].oldreturn) !== 0 ) 
+								{
+									// console.log("Will go here");
+												content = content + "<tr>"+
+													"<td>" + "<input type='checkbox' id='chkfnd"+i+"' name='"+tempfundsarr[i].bse_symbol+"' onclick=selectAll('"+i+"','f') checked>" + "</td>"+
+													
+							                        "<td>" +tempfundsarr[i].company_name +"</td>"+
+							                        "<td>"+ npt+ "</td>"+
+													"<td>"+ det +"</td>"+
+							                        "<td>"+ ronwt+ "</td>"+
+							                   		"<td>" + sales_growtht+"</td>"+
+							                        "<td>" + np_growtht+"</td>"+
+							                        "<td>" + pledgedt+"</td>"+
+							                        "<td>" + instt+"</td>"+
+							                        "<td>" + pricet+"</td>"+
+							                        "<td>" + f52_week_hlt+"</td>"+
+							                        "<td>" + trail_pe_ratiot+"</td>"+
+							                        "<td>"+ tempfundsarr[i].sector+ "</td>"+
+							                        "<td>"+ (((tempfundsarr[i].price - tempfundsarr[i].oldreturn)/tempfundsarr[i].price ) * 100.0).toFixed(2)+ " %</td>"+
+							                         
+													"</tr>";
+								}
+								else if(parseInt(tempfundsarr[i].oldreturn) !== 0 )
+								{
+												content = content + "<tr>"+
+													"<td>" + "<input type='checkbox' id='chkfnd"+i+"' name='"+tempfundsarr[i].bse_symbol+"' onclick=selectAll('"+i+"','f')>" + " </td>"+
+													
+							                        "<td>" +tempfundsarr[i].company_name +"</td>"+
+							                        "<td>"+ npt+ "</td>"+
+													"<td>"+ det +"</td>"+
+							                        "<td>"+ ronwt+ "</td>"+
+							                   		"<td>" + sales_growtht+"</td>"+
+							                        "<td>" + np_growtht+"</td>"+
+							                        "<td>" + pledgedt+"</td>"+
+							                        "<td>" + instt+"</td>"+
+							                        "<td>" + pricet+"</td>"+
+							                        "<td>" + f52_week_hlt+"</td>"+
+							                        "<td>" + trail_pe_ratiot+"</td>"+
+							                        "<td>"+ tempfundsarr[i].sector+ "</td>"+
+							                         "<td>"+ (((tempfundsarr[i].price - tempfundsarr[i].oldreturn)/tempfundsarr[i].oldreturn ) * 100.0).toFixed(2)+ " %</td>"+
+							                          
+													"</tr>";
+								}
+								
+
+            }
+     }
+    }
+
+
+        
+
+	
+	
+	content= content + "</tbody</table>";
+	$(".tablecontents").html(content);
+}
+
+
+function onlykeepwantedfunds()
+{
+		
+			
+			if(wantedfunds.length === 0)
+			{
+				fundsarr = filteredfunds.slice();
+
+				wantedfunds = filteredfunds.slice();
+				
+			}
+			else if(verytopload === false)
+			{
+				wantedfunds = filteredfunds.slice();
+				
+			}
+			else
+			{
+				fundsarr = wantedfunds.slice();
+				firstload = true;
+				
+			}
+
+
+
+	
+
+	if(selectedmode === "practise2")
+	{
+
+
+		var c = 0;
+	
+		for (var i = 0; i < allfundsfilterforpractise2.length ; i++) {
+
+		if(selectedfundsfilter[allfundsfilterforpractise2[i]] === undefined || selectedfundsfilter[allfundsfilterforpractise2[i]] === "undefined")
+		{}
+		else
+		{
+
+
+			
+
+			for (var j = 0; j < 1 ; j++) {	
+				var name  =selectedfundsfilter[allfundsfilterforpractise2[i]]["name"];
+				var category = selectedfundsfilter[allfundsfilterforpractise2[i]]["condition"];
+				var value = parseFloat(selectedfundsfilter[allfundsfilterforpractise2[i]]["value"]);
+				
+
+				
+
+				if(name === "BOOKVALUE" && category === "Greater than")
+				{
+
+
+					var k = 0;
+					while(k<wantedfunds.length)
+					{
+						if(parseFloat(wantedfunds[k].bookvalue) < parseFloat(value))
+						{
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+				
+				}
+
+				else if(name === "DEBTTOEQUITY" && category === "Greater than" )
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("De G "+value);
+					var k = 0;
+					while(k<wantedfunds.length)
+					{
+						if(parseFloat(wantedfunds[k].debttoequity) < parseFloat(value))
+						{
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+			
+				}
+
+				else if(name === "DIVIDENDYIELD" && category === "Greater than" )
+				{
+					// insertfund(fundsarr[j]);
+					
+					c=c+1;
+				
+					var k = 0;
+					while(k<wantedfunds.length)
+					{
+						if(wantedfunds[k].dividendyield < value)
+						{
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+					
+				}
+				else if(name === "FREECASHFLOW" && category === "Greater than")
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("Sales growth G "+value);
+					var k = 0;
+					while(k<wantedfunds.length)
+					{
+						if(wantedfunds[k].freecashflow < value)
+						{
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+					
+				}
+
+				else if(name === "INST HOLDING CHANGE" && category === "Greater than" )
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("Np growth G "+value);
+					var k = 0;
+					while(k<wantedfunds.length)
+					{
+
+						if(wantedfunds[k].instholdingcharge < value)
+						{
+							
+							wantedfunds.splice(k,1);
+
+						}
+						else
+						{
+							k++;
+						}
+					}
+					
+				}
+
+				else if(name === "OPERATING PROFIT GROWTH" && category === "Greater than" )
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("Pledged G "+value);
+					var k = 0;
+					while(k<wantedfunds.length)
+					{
+						// console.log(wantedfunds[k].pledged);
+						if(wantedfunds[k].operatingprofitgrowth < value)
+						{
+
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+					
+				}
+
+				else if(name === "PAT" && category === "Greater than" )
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("Inst G "+value);
+					var k = 0;
+					while(k<wantedfunds.length)
+					{
+						if(wantedfunds[k].pat < value)
+						{
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+					
+				}
+
+				else if(name === "PAT GROWTH" && category === "Greater than" )
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("Price G "+value);
+					var k = 0;
+				
+					while(k<wantedfunds.length)
+					{
+						
+						if(parseFloat(wantedfunds[k].patgrowth) < parseFloat(value))
+						{
+							// console.log("Filtered :"+wantedfunds[k].price);
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+
+					
+				}
+
+				else if(name === "PE RATIO" && category === "Greater than" )
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("52 week hl G "+value);
+					var k = 0;
+					while(k<wantedfunds.length)
+					{
+						if(wantedfunds[k].peratio < value)
+						{
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+					
+				}
+
+				else if(name === "PLEDGE" && category === "Greater than" )
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("Trail pe ratio G "+value);
+					var k = 0;
+					while(k<wantedfunds.length)
+					{
+						if(wantedfunds[k].pledge < value)
+						{
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+					
+				}
+
+
+
+				else if(name === "PREVIOUS YEAR RETURN" && category === "Greater than" )
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("Pledged G "+value);
+					var k = 0;
+					while(k<wantedfunds.length)
+					{
+						// console.log(wantedfunds[k].pledged);
+						if(wantedfunds[k].previousyearreturn < value)
+						{
+
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+					
+				}
+
+				else if(name === "ROE" && category === "Greater than" )
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("Inst G "+value);
+					var k = 0;
+					while(k<wantedfunds.length)
+					{
+						if(wantedfunds[k].roe < value)
+						{
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+					
+				}
+
+				else if(name === "SECTOR PERFORMANCE" && category === "Greater than" )
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("Price G "+value);
+					var k = 0;
+				
+					while(k<wantedfunds.length)
+					{
+						
+						if(parseFloat(wantedfunds[k].sectorperformance) < parseFloat(value))
+						{
+							// console.log("Filtered :"+wantedfunds[k].price);
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+
+					
+				}
+
+				else if(name === "TRADEABLE VOLUME" && category === "Greater than" )
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("52 week hl G "+value);
+					var k = 0;
+					while(k<wantedfunds.length)
+					{
+						if(wantedfunds[k].tradeablevolume < value)
+						{
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+					
+				}
+
+				
+				
+
+
+
+
+
+
+
+
+				if(name === "BOOKVALUE" && category === "Less than")
+				{
+
+
+					var k = 0;
+					while(k>wantedfunds.length)
+					{
+						if(parseFloat(wantedfunds[k].bookvalue) > parseFloat(value))
+						{
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+				
+				}
+
+				else if(name === "DEBTTOEQUITY" && category === "Less than" )
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("De G "+value);
+					var k = 0;
+					while(k>wantedfunds.length)
+					{
+						if(parseFloat(wantedfunds[k].debttoequity) > parseFloat(value))
+						{
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+			
+				}
+
+				else if(name === "DIVIDENDYIELD" && category === "Less than" )
+				{
+					// insertfund(fundsarr[j]);
+					
+					c=c+1;
+				
+					var k = 0;
+					while(k>wantedfunds.length)
+					{
+						if(wantedfunds[k].dividendyield > value)
+						{
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+					
+				}
+				else if(name === "FREECASHFLOW" && category === "Less than")
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("Sales growth G "+value);
+					var k = 0;
+					while(k>wantedfunds.length)
+					{
+						if(wantedfunds[k].freecashflow > value)
+						{
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+					
+				}
+
+				else if(name === "INST HOLDING CHANGE" && category === "Less than" )
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("Np growth G "+value);
+					var k = 0;
+					while(k>wantedfunds.length)
+					{
+
+						if(wantedfunds[k].instholdingcharge > value)
+						{
+							
+							wantedfunds.splice(k,1);
+
+						}
+						else
+						{
+							k++;
+						}
+					}
+					
+				}
+
+				else if(name === "OPERATING PROFIT GROWTH" && category === "Less than" )
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("Pledged G "+value);
+					var k = 0;
+					while(k>wantedfunds.length)
+					{
+						// console.log(wantedfunds[k].pledged);
+						if(wantedfunds[k].operatingprofitgrowth > value)
+						{
+
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+					
+				}
+
+				else if(name === "PAT" && category === "Less than" )
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("Inst G "+value);
+					var k = 0;
+					while(k>wantedfunds.length)
+					{
+						if(wantedfunds[k].pat > value)
+						{
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+					
+				}
+
+				else if(name === "PAT GROWTH" && category === "Less than" )
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("Price G "+value);
+					var k = 0;
+				
+					while(k>wantedfunds.length)
+					{
+						
+						if(parseFloat(wantedfunds[k].patgrowth) > parseFloat(value))
+						{
+							// console.log("Filtered :"+wantedfunds[k].price);
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+
+					
+				}
+
+				else if(name === "PE RATIO" && category === "Less than" )
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("52 week hl G "+value);
+					var k = 0;
+					while(k>wantedfunds.length)
+					{
+						if(wantedfunds[k].peratio > value)
+						{
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+					
+				}
+
+				else if(name === "PLEDGE" && category === "Less than" )
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("Trail pe ratio G "+value);
+					var k = 0;
+					while(k>wantedfunds.length)
+					{
+						if(wantedfunds[k].pledge > value)
+						{
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+					
+				}
+
+
+
+				else if(name === "PREVIOUS YEAR RETURN" && category === "Less than" )
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("Pledged G "+value);
+					var k = 0;
+					while(k>wantedfunds.length)
+					{
+						// console.log(wantedfunds[k].pledged);
+						if(wantedfunds[k].previousyearreturn > value)
+						{
+
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+					
+				}
+
+				else if(name === "ROE" && category === "Less than" )
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("Inst G "+value);
+					var k = 0;
+					while(k>wantedfunds.length)
+					{
+						if(wantedfunds[k].roe > value)
+						{
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+					
+				}
+
+				else if(name === "SECTOR PERFORMANCE" && category === "Less than" )
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("Price G "+value);
+					var k = 0;
+				
+					while(k>wantedfunds.length)
+					{
+						
+						if(parseFloat(wantedfunds[k].sectorperformance) > parseFloat(value))
+						{
+							// console.log("Filtered :"+wantedfunds[k].price);
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+
+					
+				}
+
+				else if(name === "TRADEABLE VOLUME" && category === "Less than" )
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("52 week hl G "+value);
+					var k = 0;
+					while(k>wantedfunds.length)
+					{
+						if(wantedfunds[k].tradeablevolume > value)
+						{
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+					
+				}
+
+		
+
+
+			}
+		} 
+	}
+
+
+	}
+	else{
+
+
+		var c = 0;
+	
+		for (var i = 0; i < allfundsfilter.length ; i++) {
+
+		if(selectedfundsfilter[allfundsfilter[i]] === undefined || selectedfundsfilter[allfundsfilter[i]] === "undefined")
+		{}
+		else
+		{
+
+
+			
+
+			for (var j = 0; j < 1 ; j++) {	
+				var name  =selectedfundsfilter[allfundsfilter[i]]["name"];
+				var category = selectedfundsfilter[allfundsfilter[i]]["condition"];
+				var value = parseFloat(selectedfundsfilter[allfundsfilter[i]]["value"]);
+				
+				
+
+				if(name === "NP" && category === "Greater than")
+				{
+
+
+					var k = 0;
+					while(k<wantedfunds.length)
+					{
+						if(parseFloat(wantedfunds[k].np) < parseFloat(value))
+						{
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+				
+				}
+
+				else if(name === "DE" && category === "Greater than" )
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("De G "+value);
+					var k = 0;
+					while(k<wantedfunds.length)
+					{
+						if(parseFloat(wantedfunds[k].de) < parseFloat(value))
+						{
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+			
+				}
+
+				else if(name === "RONW" && category === "Greater than" )
+				{
+					// insertfund(fundsarr[j]);
+					
+					c=c+1;
+				
+					var k = 0;
+					while(k<wantedfunds.length)
+					{
+						if(wantedfunds[k].ronw < value)
+						{
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+					
+				}
+				else if(name === "SALES_GROWTH" && category === "Greater than")
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("Sales growth G "+value);
+					var k = 0;
+					while(k<wantedfunds.length)
+					{
+						if(wantedfunds[k].sales_growth < value)
+						{
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+					
+				}
+
+				else if(name === "NP_GROWTH" && category === "Greater than" )
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("Np growth G "+value);
+					var k = 0;
+					while(k<wantedfunds.length)
+					{
+
+						if(wantedfunds[k].np_growth < value)
+						{
+							
+							wantedfunds.splice(k,1);
+
+						}
+						else
+						{
+							k++;
+						}
+					}
+					
+				}
+
+				else if(name === "PLEDGED" && category === "Greater than" )
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("Pledged G "+value);
+					var k = 0;
+					while(k<wantedfunds.length)
+					{
+						// console.log(wantedfunds[k].pledged);
+						if(wantedfunds[k].pledged < value)
+						{
+
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+					
+				}
+
+				else if(name === "INST" && category === "Greater than" )
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("Inst G "+value);
+					var k = 0;
+					while(k<wantedfunds.length)
+					{
+						if(wantedfunds[k].inst < value)
+						{
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+					
+				}
+
+				else if(name === "PRICE" && category === "Greater than" )
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("Price G "+value);
+					var k = 0;
+				
+					while(k<wantedfunds.length)
+					{
+						
+						if(parseFloat(wantedfunds[k].price) < parseFloat(value))
+						{
+							// console.log("Filtered :"+wantedfunds[k].price);
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+
+					
+				}
+
+				else if(name === "52_WEEK_HL" && category === "Greater than" )
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("52 week hl G "+value);
+					var k = 0;
+					while(k<wantedfunds.length)
+					{
+						if(wantedfunds[k].f52_week_hl < value)
+						{
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+					
+				}
+
+				else if(name === "TRAIL_PE_RATIO" && category === "Greater than" )
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("Trail pe ratio G "+value);
+					var k = 0;
+					while(k<wantedfunds.length)
+					{
+						if(wantedfunds[k].trail_pe_ratio < value)
+						{
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+					
+				}
+				else if(name === "RETURN" && category === "Greater than" )
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("De G "+value);
+					var k = 0;
+	
+				
+					
+					while(k<wantedfunds.length)
+					{
+						if(selectedmode === "practise")
+						{
+							
+							
+							var m = parseFloat(wantedfunds[k].price);
+							var n = parseFloat(wantedfunds[k].previousyearreturn);
+							var r = (m-n)/n * 100;
+							
+							
+							if( n === 0)
+							{
+								k = -10000;
+							}
+
+							if(parseFloat(r) < parseFloat(value))
+							{
+								
+								wantedfunds.splice(k,1);
+							}
+							else
+							{
+								k++;
+							}
+
+						}
+						else
+						{
+							var m = parseFloat(wantedfunds[k].price);
+							var n = parseFloat(wantedfunds[k].oldreturn);
+							var r = (m-n)/n * 100;
+							
+							
+							if( n === 0)
+							{
+								k = -10000;
+							}
+
+							if(parseFloat(r) < parseFloat(value))
+							{
+								
+								wantedfunds.splice(k,1);
+							}
+							else
+							{
+								k++;
+							}
+
+
+						}
+						
+					}
+			
+				}
+
+
+
+
+
+
+
+
+				if(name === "NP" && category === "Less than")
+				{
+
+
+					var k = 0;
+					while(k<wantedfunds.length)
+					{
+						if(wantedfunds[k].np > value)
+						{
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+				
+				}
+
+				else if(name === "DE" && category === "Less than" )
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("De G "+value);
+					var k = 0;
+					while(k<wantedfunds.length)
+					{
+						if(wantedfunds[k].de > value)
+						{
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+			
+				}
+
+				else if(name === "RONW" && category === "Less than" )
+				{
+		
+					c=c+1;
+				
+					var k = 0;
+					while(k<wantedfunds.length)
+					{
+						if(wantedfunds[k].ronw > value)
+						{
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+					
+				}
+				else if(name === "SALES_GROWTH" && category === "Less than")
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("Sales growth G "+value);
+					var k = 0;
+					while(k<wantedfunds.length)
+					{
+						if(wantedfunds[k].sales_growth > value)
+						{
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+					
+				}
+
+				else if(name === "NP_GROWTH" && category === "Less than" )
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("Np growth G "+value);
+					var k = 0;
+					while(k<wantedfunds.length)
+					{
+
+						if(wantedfunds[k].np_growth > value)
+						{
+							
+							wantedfunds.splice(k,1);
+
+						}
+						else
+						{
+							k++;
+						}
+					}
+					
+				}
+
+				else if(name === "PLEDGED" && category === "Less than" )
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("Pledged G "+value);
+					var k = 0;
+					while(k<wantedfunds.length)
+					{
+						console.log(wantedfunds[k].pledged);
+						if(wantedfunds[k].pledged > value)
+						{
+
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+					
+				}
+
+				else if(name === "INST" && category === "Less than" )
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("Inst G "+value);
+					var k = 0;
+					while(k<wantedfunds.length)
+					{
+						if(wantedfunds[k].inst > value)
+						{
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+					
+				}
+
+				else if(name === "PRICE" && category === "Less than" )
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("Price G "+value);
+					var k = 0;
+					
+					while(k<wantedfunds.length)
+					{
+						
+						if(wantedfunds[k].price > value)
+						{
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+					
+				}
+
+				else if(name === "52_WEEK_HL" && category === "Less than" )
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("52 week hl G "+value);
+					var k = 0;
+					while(k<wantedfunds.length)
+					{
+						if(wantedfunds[k].f52_week_hl > value)
+						{
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+					
+				}
+
+				else if(name === "TRAIL_PE_RATIO" && category === "Less than" )
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("Trail pe ratio G "+value);
+					var k = 0;
+					while(k<wantedfunds.length)
+					{
+						if(wantedfunds[k].trail_pe_ratio > value)
+						{
+							wantedfunds.splice(k,1);
+						}
+						else
+						{
+							k++;
+						}
+					}
+					
+				}
+				else if(name === "RETURN" && category === "Less than" )
+				{
+					// insertfund(fundsarr[j]);
+					// console.log("De G "+value);
+					var k = 0;
+					while(k<wantedfunds.length)
+					{
+						if(selectedmode === "practise")
+						{
+							var m = parseFloat(wantedfunds[k].price);
+							var n = parseFloat(wantedfunds[k].previousyearreturn);
+							var r = (m-n)/n * 100;
+							
+							
+							if( n === 0)
+							{
+								k = 10000;
+							}
+
+							if(parseFloat(r) > parseFloat(value))
+							{
+								
+								wantedfunds.splice(k,1);
+							}
+							else
+							{
+								k++;
+							}
+
+						}
+						else
+						{
+							var m = parseFloat(wantedfunds[k].price);
+							var n = parseFloat(wantedfunds[k].oldreturn);
+							var r = (m-n)/n * 100;
+							
+							
+							if( n === 0)
+							{
+								k = 10000;
+							}
+
+							if(parseFloat(r) > parseFloat(value))
+							{
+								
+								wantedfunds.splice(k,1);
+							}
+							else
+							{
+								k++;
+							}
+
+						}
+					}
+			
+				}
+
+
+			}
+		} 
+	}
+
+}
+	 
+	 $("#showingfundscount").text("Showing "+wantedfunds.length+" Equities");
+	 
+	painttable();
+	
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function insertfund(x)
+{
+	// console.log("Passed Fund "+x.bse_symbol);
+
+	// console.log(x);	
+	
+	
+	var found = false;
+	// console.log("Current lenght is "+wantedfundslength);
+	
+	for (var i = 0; i <wantedfunds.length && firstload === true ; i++) {
+		// console.log("Passed Fund "+wantedfunds[i].bse_symbol);
+		if(wantedfunds[i].bse_symbol === undefined)
+		{
+			break;
+		}
+		if(wantedfunds[i].bse_symbol === x.bse_symbol && wantedfunds[i].company_name === x.company_name)
+		{
+			
+			found = true;
+			// console.log("Holla : "+wantedfunds[i].bse_symbol);
+
+		}
+	}
+
+	if(found === false)
+	{
+		
+		
+		wantedfunds.push(x);
+		// console.log("pushed fund at index "+wantedfunds.length+" and "+wantedfundslength);
+		wantedfundslength = wantedfundslength + 1;
+	
+	}
+}
+
+
+
+function painttable()
+{
+
+	var content = "";
+	if(selectedmode === "latest")
+	{
+		 content = "<table><tbody><tr class='head'>"+
+        "<td> Select Equity </td>"+
+        "<td> Company Name </td>"+
+        "<td> NP   </td>"+
+        
+        "<td> DE  </td>"+
+        "<td> RONW   </td>"+
+        
+        "<td> Sales Growth </td>"+
+        "<td> NP Growth  </td>"+
+        "<td> Pledged   </td>"+
+        "<td> Inst Holding   </td>"+
+        "<td> Price   </td>"+
+        "<td> 52 week HL   </td>"+
+        "<td> Trail PE ratio  </td>"+
+        "<td> Sector </td>"+
+        "<td> Prev Year Return </td>"+
+        
+        "</tr>";
+	}
+	else if(selectedmode === "practise2")
+	{
+		var content = "<table><tbody><tr class='head'>"+
+        "<td> Select Equity </td>"+
+        
+        "<td> Company </td>"+
+        "<td> Book Value  </td>"+
+		"<td> Debt to Equity</td>"+
+        "<td> Dividend Yield </td>"+
+  		"<td> Free cash flow </td>"+
+        "<td> Inst holding change %</td>"+
+        "<td> Operating profit growth % </td>"+
+        "<td> Pat</td>"+
+        "<td> Pat Growth %</td>"+
+        "<td> PE Ratio </td>"+
+        "<td> Pledge %</td>"+
+        "<td> Previous Year Return %</td>"+
+        "<td> Roe % </td>"+
+        "<td> Sector </td>"+
+        "<td> Sector Performance %</td>"+
+        "<td> Tradaeble Volume </td>"+
+        "</tr>";
+	}
+	else
+	{
+		 content = "<table><tbody><tr class='head'>"+
+        "<td> Select Equity </td>"+
+        "<td> Company Name </td>"+
+        "<td> NP   </td>"+
+        
+        "<td> DE  </td>"+
+        "<td> RONW   </td>"+
+        
+        "<td> Sales Growth </td>"+
+        "<td> NP Growth  </td>"+
+        "<td> Pledged   </td>"+
+        "<td> Inst Holding   </td>"+
+        "<td> Price   </td>"+
+        "<td> 52 week HL   </td>"+
+        "<td> Trail PE ratio  </td>"+
+        "<td> Sector </td>"+
+        "<td> Prev Year Return </td>"+
+        "</tr>";
+	}
+	 
+        $(".tablecontents").html(content);
+
+
+        if(selectedmode === "practise2")
+        {
+
+
+
+        	for(var i =0;i<wantedfunds.length;i++)
+			{
+		// var xx = wantedfunds[i].bse_symbol;
+		
+		
+
+		
+		
+
+            	if(wantedfunds[i].isfundselected === true ) 
+								{
+									// console.log("Will go here");
+												content = content + "<tr>"+
+													"<td>" + "<input type='checkbox' id='chkfnd"+i+"' name='"+wantedfunds[i].bse_symbol+"' onclick=selectAllp2('"+i+"','f') checked>" + "</td>"+
+													
+							                        "<td>" +wantedfunds[i].company +"</td>"+
+							                        "<td>"+ wantedfunds[i].bookvalue+ "</td>"+
+													"<td>"+ wantedfunds[i].debttoequity +"</td>"+
+							                        "<td>"+ wantedfunds[i].dividendyield+ "</td>"+
+							                   		"<td>" + wantedfunds[i].freecashflow+"</td>"+
+							                        "<td>" + wantedfunds[i].instholdingcharge+"</td>"+
+							                        "<td>" + wantedfunds[i].operatingprofitgrowth+"</td>"+
+							                        "<td>" + wantedfunds[i].pat+"</td>"+
+							                        "<td>" + wantedfunds[i].patgrowth+"</td>"+
+							                        "<td>" + wantedfunds[i].peratio+"</td>"+
+							                        "<td>" + wantedfunds[i].pledge+"</td>"+
+							                        "<td>"+ wantedfunds[i].previousyearreturn+ "</td>"+
+							                      "<td>"+ wantedfunds[i].roe+ "% </td>"+
+							                      	"<td>" + wantedfunds[i].sector+"</td>"+
+							                        "<td>" + wantedfunds[i].sectorperformance+"</td>"+
+							                        "<td>"+ wantedfunds[i].tradeablevolume+ "</td>"+
+							                      
+													"</tr>";
+								}
+									else 
+								{
+									// console.log("Will go here");
+												content = content + "<tr>"+
+													"<td>" + "<input type='checkbox' id='chkfnd"+i+"' name='"+wantedfunds[i].bse_symbol+"' onclick=selectAllp2('"+i+"','f')>" + "</td>"+
+													
+							                         "<td>" +wantedfunds[i].company +"</td>"+
+							                        "<td>"+ wantedfunds[i].bookvalue+ "</td>"+
+													"<td>"+ wantedfunds[i].debttoequity +"</td>"+
+							                        "<td>"+ wantedfunds[i].dividendyield+ "</td>"+
+							                   		"<td>" + wantedfunds[i].freecashflow+"</td>"+
+							                        "<td>" + wantedfunds[i].instholdingcharge+"</td>"+
+							                        "<td>" + wantedfunds[i].operatingprofitgrowth+"</td>"+
+							                        "<td>" + wantedfunds[i].pat+"</td>"+
+							                        "<td>" + wantedfunds[i].patgrowth+"</td>"+
+							                        "<td>" + wantedfunds[i].peratio+"</td>"+
+							                        "<td>" + wantedfunds[i].pledge+"</td>"+
+							                        "<td>"+ wantedfunds[i].previousyearreturn+ "</td>"+
+							                      "<td>"+ wantedfunds[i].roe+ "% </td>"+
+							                      	"<td>" + wantedfunds[i].sector+"</td>"+
+							                        "<td>" + wantedfunds[i].sectorperformance+"</td>"+
+							                        "<td>"+ wantedfunds[i].tradeablevolume+ "</td>"+
+							                      
+													"</tr>";
+								}
+
+				}
+
+
+
+        }
+        else {
+        	for(var i =0;i<wantedfunds.length;i++)
+	{
+		// var xx = wantedfunds[i].bse_symbol;
+		
+		
+
+		
+		var npt = wantedfunds[i].np;
+
+                                if (npt === -1000 || npt === -100000)
+                                {
+                                        npt = "NA";
+                                }
+                                else
+                                {
+                                        npt = npt;
+                                }
+
+                                var det = wantedfunds[i].de;
+                                if (det === -1000 || det === -100000)
+                                {
+                                        det = "NA";
+                                }
+                                else
+                                {
+                                        det = det;
+                                }
+
+                                var ronwt = wantedfunds[i].ronw;
+                                if (ronwt === -1000 || ronwt === -100000)
+                                {
+                                        ronwt = "NA";
+                                }
+                                else
+                                {
+                                        ronwt = ronwt;
+                                }
+
+                                var sales_growtht = wantedfunds[i].sales_growth;
+
+                                if (sales_growtht === -1000 || sales_growtht === -100000)
+                                {
+                                        sales_growtht = "NA";
+                                }
+                                else
+                                {
+                                        sales_growtht = sales_growtht;
+                                }
+
+                                var np_growtht = wantedfunds[i].np_growth;
+                                if (np_growtht === -1000 || np_growtht === -100000)
+                                {
+                                        np_growtht = "NA";
+                                }
+                                else
+                                {
+                                        np_growtht = np_growtht;
+                                }
+
+                                var pledgedt = wantedfunds[i].pledged;
+                                if (pledgedt === -1000 || pledgedt === -100000)
+                                {
+                                        pledgedt = "NA";
+                                }
+                                else
+                                {
+                                        pledgedt = pledgedt;
+                                }
+
+                                var instt = wantedfunds[i].inst;
+                                if (instt === -1000 || instt === 100000)
+                                {
+                                        instt = "NA";
+                                }
+                                else
+                                {
+                                        instt = instt;
+                                }
+
+                                var pricet = wantedfunds[i].price;
+                                if (pricet === -1000 || pricet === -1000)
+                                {
+                                        pricet = "NA";
+                                }
+                                else
+                                {
+                                        pricet = pricet;
+                                }
+
+                                var f52_week_hlt = wantedfunds[i].f52_week_hl;
+                                if (f52_week_hlt === -1000 || f52_week_hlt === -100000)
+                                {
+                                        f52_week_hlt = "NA";
+                                }
+                                else
+                                {
+                                        f52_week_hlt = f52_week_hlt;
+                                }
+
+                                var trail_pe_ratiot = wantedfunds[i].trail_pe_ratio;
+                                if (trail_pe_ratiot === -1000 || trail_pe_ratiot === -100000)
+                                {
+                                        trail_pe_ratiot = "NA";
+                                }
+                                else
+                                {
+                                        trail_pe_ratiot = trail_pe_ratiot;
+                                }
+
+
+                               
+
+
+
+            if(selectedmode === "practise")
+            {
+
+
+            	if(wantedfunds[i].isfundselected === true && parseInt(wantedfunds[i].previousyearreturn) !== 0 ) 
+								{
+									// console.log("Will go here");
+												content = content + "<tr>"+
+													"<td>" + "<input type='checkbox' id='chkfnd"+i+"' name='"+wantedfunds[i].bse_symbol+"' onclick=selectAll('"+i+"','f') checked>" + "</td>"+
+													
+							                        "<td>" +wantedfunds[i].company_name +"</td>"+
+							                        "<td>"+ npt+ "</td>"+
+													"<td>"+ det +"</td>"+
+							                        "<td>"+ ronwt+ "</td>"+
+							                   		"<td>" + sales_growtht+"</td>"+
+							                        "<td>" + np_growtht+"</td>"+
+							                        "<td>" + pledgedt+"</td>"+
+							                        "<td>" + instt+"</td>"+
+							                        "<td>" + pricet+"</td>"+
+							                        "<td>" + f52_week_hlt+"</td>"+
+							                        "<td>" + trail_pe_ratiot+"</td>"+
+							                        "<td>"+ wantedfunds[i].sector+ "</td>"+
+							                      "<td>"+ (((wantedfunds[i].price - wantedfunds[i].previousyearreturn)/wantedfunds[i].previousyearreturn ) * 100.0).toFixed(2)+ "% </td>"+
+													"</tr>";
+								}
+									else if(wantedfunds[i].isfundselected === true && parseInt(wantedfunds[i].previousyearreturn) === 0  ) 
+								{
+									// console.log("Will go here");
+												content = content + "<tr>"+
+													"<td>" + "<input type='checkbox' id='chkfnd"+i+"' name='"+wantedfunds[i].bse_symbol+"' onclick=selectAll('"+i+"','f') checked>" + "</td>"+
+													
+							                        "<td>" +wantedfunds[i].company_name +"</td>"+
+							                        "<td>"+ npt+ "</td>"+
+													"<td>"+ det +"</td>"+
+							                        "<td>"+ ronwt+ "</td>"+
+							                   		"<td>" + sales_growtht+"</td>"+
+							                        "<td>" + np_growtht+"</td>"+
+							                        "<td>" + pledgedt+"</td>"+
+							                        "<td>" + instt+"</td>"+
+							                        "<td>" + pricet+"</td>"+
+							                        "<td>" + f52_week_hlt+"</td>"+
+							                        "<td>" + trail_pe_ratiot+"</td>"+
+							                        "<td>"+ wantedfunds[i].sector+ "</td>"+
+							                          "<td>  NA </td>"+
+													"</tr>";
+								}
+								else if(parseInt(wantedfunds[i].previousyearreturn) === 0  ) 
+								{
+									// console.log("Will go here");
+												content = content + "<tr>"+
+													"<td>" + "<input type='checkbox' id='chkfnd"+i+"' name='"+wantedfunds[i].bse_symbol+"' onclick=selectAll('"+i+"','f')>" + "</td>"+
+													
+							                        "<td>" +wantedfunds[i].company_name +"</td>"+
+							                        "<td>"+ npt+ "</td>"+
+													"<td>"+ det +"</td>"+
+							                        "<td>"+ ronwt+ "</td>"+
+							                   		"<td>" + sales_growtht+"</td>"+
+							                        "<td>" + np_growtht+"</td>"+
+							                        "<td>" + pledgedt+"</td>"+
+							                        "<td>" + instt+"</td>"+
+							                        "<td>" + pricet+"</td>"+
+							                        "<td>" + f52_week_hlt+"</td>"+
+							                        "<td>" + trail_pe_ratiot+"</td>"+
+							                        "<td>"+ wantedfunds[i].sector+ "</td>"+
+							                          "<td>  NA </td>"+
+													"</tr>";
+								}
+								else if(parseInt(wantedfunds[i].previousyearreturn) !== 0 )
+								{
+												content = content + "<tr>"+
+													"<td>" + "<input type='checkbox' id='chkfnd"+i+"' name='"+wantedfunds[i].bse_symbol+"' onclick=selectAll('"+i+"','f')>" + " </td>"+
+													
+							                        "<td>" +wantedfunds[i].company_name +"</td>"+
+							                        "<td>"+ npt+ "</td>"+
+													"<td>"+ det +"</td>"+
+							                        "<td>"+ ronwt+ "</td>"+
+							                   		"<td>" + sales_growtht+"</td>"+
+							                        "<td>" + np_growtht+"</td>"+
+							                        "<td>" + pledgedt+"</td>"+
+							                        "<td>" + instt+"</td>"+
+							                        "<td>" + pricet+"</td>"+
+							                        "<td>" + f52_week_hlt+"</td>"+
+							                        "<td>" + trail_pe_ratiot+"</td>"+
+							                        "<td>"+ wantedfunds[i].sector+ "</td>"+
+							                          "<td>"+ (((wantedfunds[i].price - wantedfunds[i].previousyearreturn)/wantedfunds[i].previousyearreturn ) * 100.0).toFixed(2)+ " %</td>"+
+													"</tr>";
+								}
+								
+
+            }
+            else
+            {
+
+            	
+
+
+
+            	if(wantedfunds[i].isfundselected === true && parseInt(wantedfunds[i].oldreturn) !== 0 ) 
+								{
+									console.log("Case 1");
+									// console.log("Will go here");
+												content = content + "<tr>"+
+													"<td>" + "<input type='checkbox' id='chkfnd"+i+"' name='"+wantedfunds[i].bse_symbol+"' onclick=selectAll('"+i+"','f') checked>" + "</td>"+
+													
+							                        "<td>" +wantedfunds[i].company_name +"</td>"+
+							                        "<td>"+ npt+ "</td>"+
+													"<td>"+ det +"</td>"+
+							                        "<td>"+ ronwt+ "</td>"+
+							                   		"<td>" + sales_growtht+"</td>"+
+							                        "<td>" + np_growtht+"</td>"+
+							                        "<td>" + pledgedt+"</td>"+
+							                        "<td>" + instt+"</td>"+
+							                        "<td>" + pricet+"</td>"+
+							                        "<td>" + f52_week_hlt+"</td>"+
+							                        "<td>" + trail_pe_ratiot+"</td>"+
+							                        "<td>"+ wantedfunds[i].sector+ "</td>"+
+							                      	"<td>"+ (((wantedfunds[i].price - wantedfunds[i].oldreturn)/wantedfunds[i].oldreturn ) * 100.0).toFixed(2)+ "% </td>"+
+													"</tr>";
+								}
+									else if(wantedfunds[i].isfundselected === true && parseInt(wantedfunds[i].oldreturn) === 0 ) 
+								{
+									console.log("Case 2");
+									// console.log("Will go here");
+												content = content + "<tr>"+
+													"<td>" + "<input type='checkbox' id='chkfnd"+i+"' name='"+wantedfunds[i].bse_symbol+"' onclick=selectAll('"+i+"','f') checked>" + "</td>"+
+													
+							                        "<td>" +wantedfunds[i].company_name +"</td>"+
+							                        "<td>"+ npt+ "</td>"+
+													"<td>"+ det +"</td>"+
+							                        "<td>"+ ronwt+ "</td>"+
+							                   		"<td>" + sales_growtht+"</td>"+
+							                        "<td>" + np_growtht+"</td>"+
+							                        "<td>" + pledgedt+"</td>"+
+							                        "<td>" + instt+"</td>"+
+							                        "<td>" + pricet+"</td>"+
+							                        "<td>" + f52_week_hlt+"</td>"+
+							                        "<td>" + trail_pe_ratiot+"</td>"+
+							                        "<td>"+ wantedfunds[i].sector+ "</td>"+
+							                         "<td>"+ "NA" +"</td>"+
+													"</tr>";
+
+								}
+									else if( parseInt(wantedfunds[i].oldreturn) === 0 ) 
+								{
+									console.log("Case 2");
+									// console.log("Will go here");
+												content = content + "<tr>"+
+													"<td>" + "<input type='checkbox' id='chkfnd"+i+"' name='"+wantedfunds[i].bse_symbol+"' onclick=selectAll('"+i+"','f')>" + "</td>"+
+													
+							                        "<td>" +wantedfunds[i].company_name +"</td>"+
+							                        "<td>"+ npt+ "</td>"+
+													"<td>"+ det +"</td>"+
+							                        "<td>"+ ronwt+ "</td>"+
+							                   		"<td>" + sales_growtht+"</td>"+
+							                        "<td>" + np_growtht+"</td>"+
+							                        "<td>" + pledgedt+"</td>"+
+							                        "<td>" + instt+"</td>"+
+							                        "<td>" + pricet+"</td>"+
+							                        "<td>" + f52_week_hlt+"</td>"+
+							                        "<td>" + trail_pe_ratiot+"</td>"+
+							                        "<td>"+ wantedfunds[i].sector+ "</td>"+
+							                         "<td>"+ "NA" +"</td>"+
+													"</tr>";
+								}
+								else if(parseInt(wantedfunds[i].oldreturn) !== 0 )
+								{
+												content = content + "<tr>"+
+													"<td>" + "<input type='checkbox' id='chkfnd"+i+"' name='"+wantedfunds[i].bse_symbol+"' onclick=selectAll('"+i+"','f')>" + " </td>"+
+													
+							                        "<td>" +wantedfunds[i].company_name +"</td>"+
+							                        "<td>"+ npt+ "</td>"+
+													"<td>"+ det +"</td>"+
+							                        "<td>"+ ronwt+ "</td>"+
+							                   		"<td>" + sales_growtht+"</td>"+
+							                        "<td>" + np_growtht+"</td>"+
+							                        "<td>" + pledgedt+"</td>"+
+							                        "<td>" + instt+"</td>"+
+							                        "<td>" + pricet+"</td>"+
+							                        "<td>" + f52_week_hlt+"</td>"+
+							                        "<td>" + trail_pe_ratiot+"</td>"+
+							                        "<td>"+ wantedfunds[i].sector+ "</td>"+
+							                         "<td>"+ (((wantedfunds[i].price - wantedfunds[i].oldreturn)/wantedfunds[i].oldreturn ) * 100.0).toFixed(2)+ "% </td>"+
+													"</tr>";
+								}
+								
+
+            }
+                                
+							
+
+
+	}
+        }
+        
+        
+	
+	
+	
+	content= content + "</tbody</table>";
+	$(".tablecontents").html(content);
+}
+
+
+
+
+var distinctsectors = [];
+function getdistinctsectors()
+{
+
+	for(var i =0;i<sector.length;i++)
+	{
+		var found = false;
+		for(var j=0;j<distinctsectors.length;j++)
+		{
+			if(sector[i] === distinctsectors[j])
+			{
+				found = true;
+				break;
+			}
+		}
+		if(found == false)
+		{
+			distinctsectors.push(sector[i]);
+		}
+	}
+
+	var distinctsectorsvalues = [];
+	var sum =0;
+	for(var j=0;j<distinctsectors.length;j++)
+	{
+		 sum =0;
+		for(var k=0;k<previousyearreturn.length;k++)
+		{
+			if(distinctsectors[j] === sector[k]) {
+				if(parseFloat(previousyearreturn[k]) === 0)
+				{
+					previousyearreturn[k] = 1;
+				}
+	
+				sum = sum + parseFloat((parseFloat(price[k]) - parseFloat(oldreturn[k]))/parseFloat(oldreturn[k]));
+			}
+		}
+
+		distinctsectorsvalues[j] = sum;
+	}
+
+	for(var i=0;i<distinctsectors.length;i++)
+	{
+		for(var j=0;j<distinctsectors.length-i-1;j++)
+		{
+			if(distinctsectorsvalues[j] < distinctsectorsvalues[j+1]) {
+				var tmp = distinctsectorsvalues[j];
+				distinctsectorsvalues[j] = distinctsectorsvalues[j+1];
+				distinctsectorsvalues[j+1] = tmp;
+
+				var dtmp = distinctsectors[j];
+				distinctsectors[j] = distinctsectors[j+1];
+				distinctsectors[j+1] = dtmp;
+			}
+		}
+	}
+
+
+	var content = "";
+	content = content + "<option>"+"All Sectors"+"</option>";
+	
+	for(var i = 5;i<=15;i=i+5)
+	{
+		content = content + "<option>"+"Top "+i+" Sectors"+"</option>";
+	}
+	$("#cateoryselect").html(content);
+
+}
+
+
+
+
+function getdistinctsectorslatest()
+{
+
+
+	if(selectedmode === "practise2")
+	{
+		for(var i =0;i<sectorp.length;i++)
+		{
+			var found = false;
+			for(var j=0;j<distinctsectors.length;j++)
+			{
+				if(sectorp[i] === distinctsectors[j])
+				{
+					found = true;
+					break;
+				}
+			}
+			if(found == false)
+			{
+				distinctsectors.push(sectorp[i]);
+			}
+		}
+	}
+	else
+	{
+
+		for(var i =0;i<sector.length;i++)
+		{
+			var found = false;
+			for(var j=0;j<distinctsectors.length;j++)
+			{
+				if(sector[i] === distinctsectors[j])
+				{
+					found = true;
+					break;
+				}
+			}
+			if(found == false)
+			{
+				distinctsectors.push(sector[i]);
+			}
+		}
+	}
+
+
+
+if(selectedmode === "practise2")
+{
+		var distinctsectorsvalues = [];
+	var sum =0;
+	for(var j=0;j<distinctsectors.length;j++)
+	{
+		 sum =0;
+		for(var k=0;k<prevyearreturnp.length;k++)
+		{
+			if(distinctsectors[j] === sectorp[k]) {
+				if(parseFloat(prevyearreturnp[k]) === 0) {
+					sum  = sum + 0;
+				}
+				else
+				{
+					sum = sum + parseFloat(prevyearreturnp[k]);
+				}
+				
+			}
+		}
+		
+
+		distinctsectorsvalues[j] = sum;
+	}
+
+	for(var i=0;i<distinctsectors.length;i++)
+	{
+		for(var j=0;j<distinctsectors.length-i-1;j++)
+		{
+			if(distinctsectorsvalues[j] < distinctsectorsvalues[j+1]) {
+				var tmp = distinctsectorsvalues[j];
+				distinctsectorsvalues[j] = distinctsectorsvalues[j+1];
+				distinctsectorsvalues[j+1] = tmp;
+
+				var dtmp = distinctsectors[j];
+				distinctsectors[j] = distinctsectors[j+1];
+				distinctsectors[j+1] = dtmp;
+			}
+		}
+	}
+
+	
+
+
+
+
+	var content = "";
+	content = content + "<option>"+"All Sectors"+"</option>";
+	
+	for(var i = 5;i<=15;i=i+5)
+	{
+		content = content + "<option>"+"Top "+i+" Sectors"+"</option>";
+	}
+	$("#cateoryselect").html(content);
+}
+else 
+{
+		var distinctsectorsvalues = [];
+	var sum =0;
+	for(var j=0;j<distinctsectors.length;j++)
+	{
+		 sum =0;
+		for(var k=0;k<previousyearreturn.length;k++)
+		{
+			if(distinctsectors[j] === sector[k]) {
+				if(parseFloat(oldreturn[k]) === 0) {
+					sum  = sum + 0;
+				}
+				else
+				{
+					sum = sum + parseFloat((parseFloat(oldreturn[k]) - parseFloat(price[k]))/parseFloat(oldreturn[k]));
+				}
+				
+			}
+		}
+		
+
+		distinctsectorsvalues[j] = sum;
+	}
+
+	for(var i=0;i<distinctsectors.length;i++)
+	{
+		for(var j=0;j<distinctsectors.length-i-1;j++)
+		{
+			if(distinctsectorsvalues[j] < distinctsectorsvalues[j+1]) {
+				var tmp = distinctsectorsvalues[j];
+				distinctsectorsvalues[j] = distinctsectorsvalues[j+1];
+				distinctsectorsvalues[j+1] = tmp;
+
+				var dtmp = distinctsectors[j];
+				distinctsectors[j] = distinctsectors[j+1];
+				distinctsectors[j+1] = dtmp;
+			}
+		}
+	}
+
+
+
+
+
+
+	var content = "";
+	content = content + "<option>"+"All Sectors"+"</option>";
+	
+	for(var i = 5;i<=15;i=i+5)
+	{
+		content = content + "<option>"+"Top "+i+" Sectors"+"</option>";
+	}
+	$("#cateoryselect").html(content);	
+}
+
+
+
+
+}
+
+
+var selectedmode = "";
+
+
+function practiseclicked()
+{
+	$(".hider").css("display","none");
+	$(".sec1").css("display","none");
+	$(".sec2").css("display","block");
+	$(".coverscreen").css("display","block");
+	$(".filters").css("display","block");
+	$(".next button").css("display","block");
+	$("#showingselectedequities").css("display","block");
+	selectedmode = "practise";
+	generatedata("practise");
+	onlykeepwantedfunds();
+
+}
+
+function practise2clicked()
+{
+	$(".hider").css("display","none");
+	$("#dataforlabel").css("display","none");
+	$(".sec1").css("display","none");
+	$(".sec2").css("display","block");
+	$(".coverscreen").css("display","block");
+	$(".filters").css("display","block");
+	$(".next button").css("display","block");
+	$("#showingselectedequities").css("display","block");
+	selectedmode = "practise2";
+	prepareselectfilters();
+	generatedata("practise2");
+	onlykeepwantedfunds();
+
+}
+
+
+
+function liveclicked()
+{
+	$(".hider").css("display","none");
+	$("#dataforlabel").css("display","block");
+	$(".sec1").css("display","none");
+	$(".sec2").css("display","block");
+	$(".coverscreen").css("display","block");
+	$(".filters").css("display","block");
+	$(".next button").css("display","block");
+	$("#showingselectedequities").css("display","block");
+	selectedmode = "latest";
+	sc.database().ref("fundamentalanalysisdatafilename").child("filename").on('value',function(snapshot) {
+			var dataon = snapshot.val().filename;
+			$("#dataforlabel").text("Data : "+dataon);
+			
+		});
+	generatedata("latest");
+	onlykeepwantedfunds();
+
+}
+
+
+
+function checkedall()
+{
+
+
+	if(wantedfunds.length < filteredfunds.length)
+	{
+	for(var i=0;i<wantedfunds.length;i++)
+	{
+		$('#chkfnd'+i).prop('checked', true);
+		
+		var x = filteredfunds.indexOf(wantedfunds[i]);
+		if(filteredfunds[x].isfundselected === false || filteredfunds[x].isfundselected === undefined )
+		{
+			wantedfunds[i].isfundselected = true;
+		selectedfunds.push(wantedfunds[i]);
+		}
+		isfundselected[x] = true;
+	}
+	}
+	if(wantedfunds.length === 0 || wantedfunds.length > filteredfunds.length) {
+			for(var i=0;i<filteredfunds.length;i++)
+		{
+			$('#chkfnd'+i).prop('checked', true);
+			if(filteredfunds[i].isfundselected === false || filteredfunds[i].isfundselected === undefined )
+			{
+				filteredfunds[i].isfundselected = true;
+				selectedfunds.push(filteredfunds[i]);
+			}
+			isfundselected[i] = true;
+		}		
+	}
+	 $("#showingselectedequities").text("Selected "+selectedfunds.length+" Equities");
+}
+
+function getpropervalue(val)
+{
+	if(val == 'NULL' || val == 'Null' || val == null || val == undefined) {
+		return 0;
+	}
+	else {
+		if(parseFloat(val).toFixed(2) === undefined){
+			return parseFloat(val);
+		}
+		else{
+			return parseFloat(val.toFixed(2));
+		}
+		
+	}
+}
+
+function generatedata(mode)
+	{
+		
+		if(mode === "latest")
+		{
+
+			var starCountRef = sc.database().ref('fundamentalanalysisdata');
+			starCountRef.once('value').then(function(snapshot) {
+		  		snapshot.forEach(function(childSnapshot) {
+					  var childData = childSnapshot.val();
+	     			 bse_symbol.push(childData.bse_symbol);
+	     			 company_name.push(childData.company_name);
+	     			 np.push(getpropervalue(childData.np));
+	     			 de.push(getpropervalue(childData.de));
+	     			 ronw.push(getpropervalue(childData.ronw));
+	     			 sales_growth.push(getpropervalue(childData.sales_growth));
+	     			 np_growth.push(getpropervalue(childData.np_growth));
+	     			 pledged.push(getpropervalue(childData.pledged));
+	     			 inst.push(getpropervalue(childData.inst));
+	     			 price.push(getpropervalue(childData.price));
+	     			 // console.log(parseFloat(childData.price).toFixed(2));
+	     			 f52_week_hl.push(parseFloat(childData.f52_week_hl));
+	     			 trail_pe_ratio.push((childData.trail_pe_ratio != null ? childData.trail_pe_ratio : 0).toFixed(2));
+	     			 sector.push(childData.sector);
+	     			 oldreturn.push(childData.oldreturn);
+
+	     			 previousyearreturn.push(-1);
+	     			 actualrank.push(-1);
+
+
+				});
+	    	for(var i=0;i<bse_symbol.length;i++)
+    		{
+    			bse_symbol[i] = String(bse_symbol[i]).trim();
+    		}
+    		getdistinctsectorslatest();
+    		loadfunds("all");
+    		$(".coverscreen").css("display","none");
+    		$(".heroregion button").css("display","none");
+    		$("#showingfundscount").text("Showing "+bse_symbol.length+" Equities");
+	  		});
+	 	}
+	  	else if(mode === "practise")
+	  	{
+	  		var starCountRef = main.database().ref(mode);
+	  		starCountRef.once('value').then(function(snapshot) {
+		  		snapshot.forEach(function(childSnapshot) {
+		  			var childData = childSnapshot.val();
+		  	
+	     			 if(parseFloat(childData.previousyearreturn).toFixed(2) !== "1.00") 
+	     			 {
+		     			 bse_symbol.push(childData.bse_symbol);
+		     			 company_name.push(childData.company_name);
+		     			 np.push(parseFloat(childData.np.toFixed(2)));
+		     			 de.push(parseFloat(childData.de.toFixed(2)));
+		     			 ronw.push(parseFloat(childData.ronw.toFixed(2)));
+		     			 sales_growth.push(parseFloat(childData.sales_growth).toFixed(2));
+		     			 np_growth.push(parseFloat(childData.np_growth).toFixed(2));
+		     			 pledged.push(parseFloat(childData.pledged).toFixed(2));
+		     			 inst.push(parseFloat(childData.inst).toFixed(2));
+		     			 price.push(parseFloat(childData.price).toFixed(2));
+		     			 // console.log(parseFloat(childData.price).toFixed(2));
+		     			 f52_week_hl.push(parseFloat(childData.f52_week_hl));
+		     			 trail_pe_ratio.push(childData.trail_pe_ratio.toFixed(2));
+		     			 sector.push(childData.sector);
+		     			 previousyearreturn.push(parseFloat(childData.previousyearreturn).toFixed(2));
+		     			 // console.log(childData.company_name +" and "+parseFloat(childData.price).toFixed(2)+" and "+ childData.previousyearreturn);
+		     			 oldreturn.push(parseFloat(childData.oldreturn).toFixed(2));
+		     			 actualrank.push(childData.actualrank);
+	     			}
+
+
+	    		});
+	    	for(var i=0;i<bse_symbol.length;i++)
+    		{
+    			bse_symbol[i] = String(bse_symbol[i]).trim();
+    		}
+    		getdistinctsectors();
+    		loadfunds("all");
+    		$(".coverscreen").css("display","none");
+    		$(".heroregion button").css("display","none");
+    		$("#showingfundscount").text("Showing "+bse_symbol.length+" Equities");
+	  		});
+	  	}
+	  	else if(mode === "practise2")
+	  	{
+	  		var starCountRef = main.database().ref(mode);
+	  			starCountRef.once('value').then(function(snapshot) {
+		  		snapshot.forEach(function(childSnapshot) {
+		  			var childData = childSnapshot.val();
+
+		  				if(childData.company !== "" || childData.company !== " ") {
+		  					companyp.push(childData.company);
+		  					bookvalp.push(childData.bookvalue);
+		  					debttoequityp.push(childData.debttoequity);
+		  					divyieldp.push(childData.dividendyield);
+		  					freecashflowp.push(childData.freecashflow);
+		  					instholdingp.push(childData.instholdingcharge);
+		  					operatingprofitgrowthp.push(childData.operatingprofitgrowth);
+		  					patp.push(childData.pat);
+		  					patgrowthp.push(childData.patgrowth);
+		  					peratiop.push(childData.peratio);
+		  					pledgep.push(childData.pledge);
+		  					prevyearreturnp.push(childData.prevyearreturn);
+		  					roep.push(childData.roe);
+		  					sectorp.push(childData.sector);
+		  					sectorperformancep.push(childData.sectorperformance);
+		  					symbolp.push(childData.symbol);
+		  					tradeablevolumep.push(childData.tradeablevolume);
+
+		  				}
+
+
+		  		 });
+		  		    		getdistinctsectorslatest();
+    		loadfunds("all");
+    		$(".coverscreen").css("display","none");
+    		$(".heroregion button").css("display","none");
+    		$("#showingfundscount").text("Showing "+companyp.length+" Equities");
+		  	});
+
+	  	}
+
+
+		
+	}
+
+
+
+
+
+// Not Required
+
+	function handlecategory() {
+								selectedfundsfilter = [];
+							var tc = "";
+							prepareselectfilters();
+							$(".individualfilters").html(tc);
+							$("#orderdropdown").val("None").change();
+    				var selectBox = document.getElementById("cateoryselect");
+   				 	var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+
+    				loadfundsfortopsectors(selectedValue);
+   			}
+
+
+
+
+
+
+
+
+
+
+function loadfunds(x)
+{
+
+	if(selectedmode === "practise2")
+	{
+		filteredfunds = [];
+	
+	for(var i=0;i<companyp.length;i++)
+	{
+		if(sectorp[i] === x || x === "all")
+		{
+			if(companyp[i] !== "" && companyp[i] !== "Company")
+			{
+
+				filteredfunds.push({"company":companyp[i],"bookvalue":parseFloat(bookvalp[i]),"debttoequity":parseFloat(debttoequityp[i]),"dividendyield":parseFloat(divyieldp[i]),"freecashflow":parseFloat(freecashflowp[i]),"instholdingcharge":parseFloat(instholdingp[i]),
+				"operatingprofitgrowth":parseFloat(operatingprofitgrowthp[i]),"pat":parseFloat(patp[i]),"patgrowth":parseFloat(patgrowthp[i]),"peratio":parseFloat(peratiop[i]),"pledge":parseFloat(pledgep[i]),
+			"previousyearreturn":parseFloat(prevyearreturnp[i]),"roe":parseFloat(roep[i]),"sector":sectorp[i],"sectorperformance":parseFloat(sectorperformancep[i]),"symbol":symbolp[i],"tradeablevolume" : parseFloat(tradeablevolumep[i]) });
+
+				lastloadedfunds.push({"company":companyp[i],"bookvalue":parseFloat(bookvalp[i]),"debttoequity":parseFloat(debttoequityp[i]),"dividendyield":parseFloat(divyieldp[i]),"freecashflow":parseFloat(freecashflowp[i]),"instholdingcharge":parseFloat(instholdingp[i]),
+				"operatingprofitgrowth":parseFloat(operatingprofitgrowthp[i]),"pat":parseFloat(patp[i]),"patgrowth":parseFloat(patgrowthp[i]),"peratio":parseFloat(peratiop[i]),"pledge":parseFloat(pledgep[i]),
+			"previousyearreturn":parseFloat(prevyearreturnp[i]),"roe":parseFloat(roep[i]),"sector":sectorp[i],"sectorperformance":parseFloat(sectorperformancep[i]),"symbol":symbolp[i],"tradeablevolume" : parseFloat(tradeablevolumep[i]) });
+			}
+			
+		}
+	}
+		
+		 
+
+	filterfundsp2();
+	}
+
+	else
+	{
+
+	
+	filteredfunds = [];
+	
+	for(var i=0;i<bse_symbol.length;i++)
+	{
+		if(sector[i] === x || x === "all")
+		{
+			if(parseInt(previousyearreturn[i]) !== 0)
+			{
+
+				filteredfunds.push({"bse_symbol":bse_symbol[i],"company_name":company_name[i],"np":np[i],"de":de[i],"ronw":ronw[i],"sales_growth":sales_growth[i],
+				"np_growth":np_growth[i],"pledged":pledged[i],"inst":inst[i],"price":price[i],"f52_week_hl":f52_week_hl[i],
+			"trail_pe_ratio":trail_pe_ratio[i],"sector":sector[i],"rank":0,"oldreturn":oldreturn[i],"actualrank":actualrank[i],"isfundselected" : isfundselected[i],"previousyearreturn":previousyearreturn[i] });
+
+				lastloadedfunds.push({"bse_symbol":bse_symbol[i],"company_name":company_name[i],"np":np[i],"de":de[i],"ronw":ronw[i],"sales_growth":sales_growth[i],
+				"np_growth":np_growth[i],"pledged":pledged[i],"inst":inst[i],"price":price[i],"f52_week_hl":f52_week_hl[i],
+			"trail_pe_ratio":trail_pe_ratio[i],"sector":sector[i],"rank":0,"oldreturn":oldreturn[i],"actualrank":actualrank[i],"isfundselected" : isfundselected[i],"previousyearreturn":previousyearreturn[i] });
+			}
+			
+		}
+	}
+		
+
+	filterfunds();
+
+	}
+	
+
+
+}
+
+
+
+var lastloadedfunds = [];
+
+function loadfundsfortopsectors(x)
+{
+
+
+
+	if(selectedmode === "practise2")
+	{
+			for(var i=0;i<filteredfunds.length;i++)
+	{
+			filteredfunds[i].isfundselected = false;
+	
+	}
+	for(var i=0;i<isfundselected.length;i++)
+	{
+			isfundselected[i] = false;
+	}
+	
+	
+	selectedfunds.splice(0,selectedfunds.length);
+	
+	$("#showingselectedequities").text("Selected 0 Equities");
+	filteredfunds = [];
+	var xx = 0;
+
+	if(x !== "All Sectors")
+	{
+		xx = parseInt(x.slice(4,5));
+		xx = parseInt(x.split(" ")[1]);
+		
+	}
+	else
+	{
+		filteredfunds = lastloadedfunds.slice();
+		filterfunds();
+		$("#showingfundscount").text("Showing "+filteredfunds.length+" Equities");
+		xx = distinctsectors.length;
+		return;
+	}
+	
+	for(var i=0;i<companyp.length;i++)
+	{
+		for(var j=0;j<xx;j++)
+		{
+
+
+			if(sectorp[i] === distinctsectors[j] || x === "All Sectors")
+			{
+				if(companyp[i] !== "" && companyp[i] !== " " && companyp[i] !== undefined && companyp[i] !== "Company")
+				{
+				
+				filteredfunds.push({ "company":companyp[i],"bookvalue":parseFloat(bookvalp[i]),"debttoequity":parseFloat(debttoequityp[i]),"dividendyield":parseFloat(divyieldp[i]),"freecashflow":parseFloat(freecashflowp[i]),"instholdingcharge":parseFloat(instholdingp[i]),
+				"operatingprofitgrowth":parseFloat(operatingprofitgrowthp[i]),"pat":parseFloat(patp[i]),"patgrowth":parseFloat(patgrowthp[i]),"peratio":parseFloat(peratiop[i]),"pledge":parseFloat(pledgep[i]),
+			"previousyearreturn":parseFloat(prevyearreturnp[i]),"roe":parseFloat(roep[i]),"sector":sectorp[i],"sectorperformance":parseFloat(sectorperformancep[i]),"symbol":symbolp[i],"tradeablevolume" : parseFloat(tradeablevolumep[i])});
+				
+				}
+				
+			}
+		}
+	}
+	
+	 $("#showingfundscount").text("Showing "+filteredfunds.length+" Equities");
+	filterfundsp2();
+	}
+	else
+	{
+			for(var i=0;i<filteredfunds.length;i++)
+	{
+			filteredfunds[i].isfundselected = false;
+	
+	}
+	for(var i=0;i<isfundselected.length;i++)
+	{
+			isfundselected[i] = false;
+	}
+	
+	
+	selectedfunds.splice(0,selectedfunds.length);
+	
+	$("#showingselectedequities").text("Selected 0 Equities");
+	filteredfunds = [];
+	var xx = 0;
+
+	if(x !== "All Sectors")
+	{
+		xx = parseInt(x.slice(4,5));
+		xx = parseInt(x.split(" ")[1]);
+		
+	}
+	else
+	{
+		filteredfunds = lastloadedfunds.slice();
+		filterfunds();
+		$("#showingfundscount").text("Showing "+filteredfunds.length+" Equities");
+		xx = distinctsectors.length;
+		return;
+	}
+	
+	for(var i=0;i<bse_symbol.length;i++)
+	{
+		for(var j=0;j<xx;j++)
+		{
+
+
+			if(sector[i] === distinctsectors[j] || x === "All Sectors")
+			{
+				if(parseInt(previousyearreturn[i]) !== 0)
+				{
+				
+				filteredfunds.push({"bse_symbol":bse_symbol[i],"company_name":company_name[i],"np":np[i],"de":de[i],"ronw":ronw[i],"sales_growth":sales_growth[i],
+				"np_growth":np_growth[i],"pledged":pledged[i],"inst":inst[i],"price":price[i],"f52_week_hl":f52_week_hl[i],
+			"trail_pe_ratio":trail_pe_ratio[i],"sector":sector[i],"rank":0,"oldreturn":oldreturn[i],"actualrank":actualrank[i],"isfundselected" : isfundselected[i],"previousyearreturn":previousyearreturn[i] });
+				
+				}
+				
+			}
+		}
+	}
+	
+	 $("#showingfundscount").text("Showing "+filteredfunds.length+" Equities");
+	filterfunds();
+	}
+
+
+
+	
+
+
+}
+
+
+
+
+
+
+function loadselectedcategoriesfunds()
+{
+	allfundswithselectedcategories = [];
+	selectedcategoriesnew = [];
+	for(var i=0;i<selectedfunds.length;i++)
+	{
+		var found = false;
+		for(var j=0;j<selectedcategoriesnew.length;j++)
+		{
+			if(selectedfunds[i].sector === selectedcategoriesnew[j])
+			{
+				found = true;
+			}
+		}
+		if(found === false)
+		{
+			selectedcategoriesnew.push(selectedfunds[i].sector);
+		}
+		
+	}
+		allfundswithselectedcategories = [];
+		for(var i=0;i<bse_symbol.length;i++)
+		{
+			for(var k=0;k<selectedcategoriesnew.length;k++)
+			{
+				// console.log("Comparing "+sector[i]+" and "+selectedcategoriesnew[k]);
+				if(sector[i] === selectedcategoriesnew[k])
+				{
+					allfundswithselectedcategories.push({"bse_symbol":bse_symbol[i],"company_name":company_name[i],"np":np[i],"de":de[i],"ronw":ronw[i],"sales_growth":sales_growth[i],"np_growth":np_growth[i],"pledged":pledged[i],"inst":inst[i],"price":price[i],"f52_week_hl":f52_week_hl[i],
+					"trail_pe_ratio":trail_pe_ratio[i],"sector":sector[i],"rank":0,"oldreturn":oldreturn[i],"actualrank":actualrank[i],"isfundselected" : isfundselected[i]
+					 });
+				}
+			}
+		}	
+
+
+	
+
+
+}
+
+
+function download()
+{
+	window.print();
+}
+
+function generateportfolio()
+	{
+
+
+
+
+
+		$(".coverscreen").css("display","none");
+		$(".sec1").css("display","none");
+		$(".filters").css("display","none");
+		$(".tablecontents").css("display","none");
+		$(".next").css("display","none");
+		$(".download button").css("display","block");
+		var pcontent = "<h3> Best Funds according to us. </h3>";
+		var csvcontent = [];
+		if(selectedmode === "practise2") {
+			csvcontent.push(["Company","Book Value","Debt To Equity","Dividend Yield","Free Cash Flow","Inst Holding Charge","Overall Profit Growth","PAT","PAT Growth %","PE Ratio","Pledge %","Previous Year Return %","ROE %","Sector","Sector Performance","Tradeable Volume"]);
+		}
+		else {
+			csvcontent.push(["Company","NP","Debt To Equity"," RONW","Sales Growth","NP Growth","Pledged","INST Holding","Price","52 Week HL","Trail PE Ratio","Sector"]);
+		}
+		  
+		  for(var i=0;i<selectedfunds.length;i++)
+        	{
+        	
+        		if(selectedmode === "practise2") {
+        		csvcontent.push([selectedfunds[i].company,selectedfunds[i].bookvalue,selectedfunds[i].debttoequity,selectedfunds[i].dividendyield,selectedfunds[i].freecashflow,selectedfunds[i].instholdingcharge,selectedfunds[i].operatingprofitgrowth,selectedfunds[i].pat,selectedfunds[i].patgrowth,selectedfunds[i].peratio,selectedfunds[i].pledge,selectedfunds[i].previousyearreturn,selectedfunds[i].roe,selectedfunds[i].sector,selectedfunds[i].sectorperformance,selectedfunds[i].tradeablevolume]);
+        		}
+        		else {
+        			csvcontent.push([selectedfunds[i].company_name,selectedfunds[i].np,selectedfunds[i].de,selectedfunds[i].ronw,selectedfunds[i].sales_growth,selectedfunds[i].np_growth,selectedfunds[i].pledged,selectedfunds[i].inst,selectedfunds[i].price,selectedfunds[i].f52_week_hl,selectedfunds[i].trail_pe_ratio,selectedfunds[i].sector]);
+        		}
+
+        	}
+		
+
+
+		  let cssvContent = "data:text/csv;charset=utf-8,"  + csvcontent.map(e => e.join(",")).join("\n");
+		  var encodedUri = encodeURI(cssvContent);
+		var link = document.createElement("a");
+		link.setAttribute("href", encodedUri);
+		link.setAttribute("download", "Top_funds.csv");
+		document.body.appendChild(link); // Required for FF
+
+link.click();
+
+
+
+
+		
+	}
+
+
+
+function filterfundsp2()
+{
+	for(var j=0;j<choices.length;j++)
+	{
+		if(choices[j] == "Ascending" || choices[j] == "A")
+		{
+			for(var k=0;k<filteredfunds.length-1;k++)
+			{
+				for(var m=0;m<filteredfunds.length-1-k;m++)
+				{
+					if(j===0)
+					{
+						if(filteredfunds[m].bookvalue > filteredfunds[m+1].bookvalue)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+					}
+
+					if(j===1)
+					{
+						if(filteredfunds[m].debttoequity > filteredfunds[m+1].debttoequity)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+					}
+
+					if(j===2)
+					{
+						if(filteredfunds[m].dividendyield > filteredfunds[m+1].dividendyield)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+					}
+
+					if(j===3)
+					{
+						if(filteredfunds[m].freecashflow > filteredfunds[m+1].freecashflow)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+					}
+
+					if(j===4)
+					{
+						if(filteredfunds[m].instholdingcharge > filteredfunds[m+1].instholdingcharge)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+					}
+
+					if(j===5)
+					{
+						if(filteredfunds[m].operatingprofitgrowth > filteredfunds[m+1].operatingprofitgrowth)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+					}
+
+					if(j===6)
+					{
+						if(filteredfunds[m].pat > filteredfunds[m+1].pat)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+					}
+
+					if(j===7)
+					{
+						if(filteredfunds[m].patgrowth > filteredfunds[m+1].patgrowth)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+					}
+					if(j===8)
+					{
+						if(filteredfunds[m].peratio > filteredfunds[m+1].peratio)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+					}
+
+					if(j===9)
+					{
+						if(filteredfunds[m].pledge > filteredfunds[m+1].pledge)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+					}
+
+					if(j===10)
+					{
+						if(filteredfunds[m].previousyearreturn > filteredfunds[m+1].previousyearreturn)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+					}
+
+					if(j===11)
+					{
+						if(filteredfunds[m].roe > filteredfunds[m+1].roe)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+					}
+
+					
+					if(j===12)
+					{
+						if(filteredfunds[m].sectorperformance > filteredfunds[m+1].sectorperformance)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+					}
+
+					if(j===13)
+					{
+						if(filteredfunds[m].tradeablevolume > filteredfunds[m+1].tradeablevolume)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+					}
+
+				}
+			}
+		}
+		else if(choices[j] == "Descending" || choices[j] == "D")
+		{
+			for(var k=0;k<filteredfunds.length-1;k++)
+			{
+				for(var m=0;m<filteredfunds.length-1-k;m++)
+				{
+					if(j===0)
+					{
+						if(filteredfunds[m].bookvalue < filteredfunds[m+1].bookvalue)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+					}
+
+					if(j===1)
+					{
+						if(filteredfunds[m].debttoequity < filteredfunds[m+1].debttoequity)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+					}
+
+					if(j===2)
+					{
+						if(filteredfunds[m].dividendyield < filteredfunds[m+1].dividendyield)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+					}
+
+					if(j===3)
+					{
+						if(filteredfunds[m].freecashflow < filteredfunds[m+1].freecashflow)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+					}
+
+					if(j===4)
+					{
+						if(filteredfunds[m].instholdingcharge < filteredfunds[m+1].instholdingcharge)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+					}
+
+					if(j===5)
+					{
+						if(filteredfunds[m].operatingprofitgrowth < filteredfunds[m+1].operatingprofitgrowth)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+					}
+
+					if(j===6)
+					{
+						if(filteredfunds[m].pat < filteredfunds[m+1].pat)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+					}
+
+					if(j===7)
+					{
+						if(filteredfunds[m].patgrowth < filteredfunds[m+1].patgrowth)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+					}
+					if(j===8)
+					{
+						if(filteredfunds[m].peratio < filteredfunds[m+1].peratio)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+					}
+
+					if(j===9)
+					{
+						if(filteredfunds[m].pledge < filteredfunds[m+1].pledge)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+					}
+
+					if(j===10)
+					{
+						if(filteredfunds[m].previousyearreturn < filteredfunds[m+1].previousyearreturn)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+					}
+
+					if(j===11)
+					{
+						if(filteredfunds[m].roe < filteredfunds[m+1].roe)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+					}
+
+					
+					if(j===12)
+					{
+						if(filteredfunds[m].sectorperformance < filteredfunds[m+1].sectorperformance)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+					}
+
+					if(j===13)
+					{
+						if(filteredfunds[m].tradeablevolume < filteredfunds[m+1].tradeablevolume)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+					}
+
+				}
+			}
+		}
+
+
+
+		 var content = "<table><tbody><tr class='head'>"+
+        "<td> Select Fund </td>"+
+        
+        "<td> Company </td>"+
+        "<td> Book Value  </td>"+
+		"<td> Debt to Equity</td>"+
+        "<td> Dividend Yield </td>"+
+  		"<td> Free cash flow </td>"+
+        "<td> Inst holding change %</td>"+
+        "<td> Operating profit growth % </td>"+
+        "<td> Pat</td>"+
+        "<td> Pat Growth %</td>"+
+        "<td> PE Ratio </td>"+
+        "<td> Pledge %</td>"+
+        "<td> Previous Year Return %</td>"+
+        "<td> Roe % </td>"+
+        "<td> Sector </td>"+
+        "<td> Sector Performance %</td>"+
+        "<td> Tradaeble Volume </td>"+
+        "</tr>";
+
+
+        					for(var i = 0; i<filteredfunds.length;i++)
+        					{
+
+        							if(filteredfunds[i].isfundselected === true  ) 
+								{
+									// console.log("Will go here");
+												content = content + "<tr>"+
+													"<td>" + "<input type='checkbox' id='chkfnd"+i+"' name='"+filteredfunds[i].company+"' onclick=selectAllp2('"+i+"','f') checked>" + "</td>"+
+													
+							                        "<td>" +filteredfunds[i].company +"</td>"+
+							                        "<td>"+ filteredfunds[i].bookvalue + "</td>"+
+													"<td>"+ filteredfunds[i].debttoequity  +"</td>"+
+							                        "<td>"+ filteredfunds[i].dividendyield + "</td>"+
+							                   		"<td>" + filteredfunds[i].freecashflow +"</td>"+
+							                        "<td>" + filteredfunds[i].instholdingcharge +"</td>"+
+							                        "<td>" + filteredfunds[i].operatingprofitgrowth +"</td>"+
+							                        "<td>" + filteredfunds[i].pat +"</td>"+
+							                        "<td>" + filteredfunds[i].patgrowth +"</td>"+
+							                        "<td>" + filteredfunds[i].peratio +"</td>"+
+							                        "<td>" + filteredfunds[i].pledge +"</td>"+
+							                        "<td>"+ filteredfunds[i].previousyearreturn+ "</td>"+
+							                        "<td>"+ filteredfunds[i].roe + " %</td>"+
+							                        "<td>" + filteredfunds[i].sector +"</td>"+
+							                        "<td>"+ filteredfunds[i].sectorperformance+ "</td>"+
+							                        "<td>"+ filteredfunds[i].tradeablevolume + " %</td>"+
+													"</tr>";
+								}
+									else 
+								{
+									// console.log("Will go here");
+												content = content + "<tr>"+
+													"<td>" + "<input type='checkbox' id='chkfnd"+i+"' name='"+filteredfunds[i].company+"' onclick=selectAllp2('"+i+"','f')>" + "</td>"+
+													
+							                        "<td>" +filteredfunds[i].company +"</td>"+
+							                        "<td>"+ filteredfunds[i].bookvalue + "</td>"+
+													"<td>"+ filteredfunds[i].debttoequity  +"</td>"+
+							                        "<td>"+ filteredfunds[i].dividendyield + "</td>"+
+							                   		"<td>" + filteredfunds[i].freecashflow +"</td>"+
+							                        "<td>" + filteredfunds[i].instholdingcharge +"</td>"+
+							                        "<td>" + filteredfunds[i].operatingprofitgrowth +"</td>"+
+							                        "<td>" + filteredfunds[i].pat +"</td>"+
+							                        "<td>" + filteredfunds[i].patgrowth +"</td>"+
+							                        "<td>" + filteredfunds[i].peratio +"</td>"+
+							                        "<td>" + filteredfunds[i].pledge +"</td>"+
+							                        "<td>"+ filteredfunds[i].previousyearreturn+ "</td>"+
+							                        "<td>"+ filteredfunds[i].roe + " %</td>"+
+							                        "<td>" + filteredfunds[i].sector +"</td>"+
+							                        "<td>"+ filteredfunds[i].sectorperformance+ "</td>"+
+							                        "<td>"+ filteredfunds[i].tradeablevolume + " %</td>"+
+													"</tr>";
+								}
+							}
+
+								content= content + "</tbody</table>";
+								$(".tablecontents").html(content);
+
+
+
+
+	}
+}
+
+
+
+
+function filterfunds()
+{
+	
+
+
+
+
+	for(var j=0;j<choices.length;j++)
+	{
+		if(choices[j] == "Ascending"  || choices[j] == "A")
+		{
+			
+			for(var k =0;k<filteredfunds.length-1;k++)
+			{
+				for(var m=0;m<filteredfunds.length-1-k;m++)
+				{
+
+							if (filteredfunds[m].np !== 1000) {
+                                                        if (filteredfunds[m].np !== 100000) {
+                                                                if (filteredfunds[m+1].np !== 1000) {
+                                                        if (filteredfunds[m+1].np !== 100000) {
+
+					if(j==0)
+					{
+						if(filteredfunds[m].np > filteredfunds[m+1].np)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+					}
+					}}}}
+
+
+					 if (filteredfunds[m].de !== 1000) {
+                                                        if (filteredfunds[m].de !== 100000) {
+                                                                if (filteredfunds[m+1].de !== 1000) {
+                                                        if (filteredfunds[m+1].de !== 100000) {
+					if(j==1)
+					{
+						if(filteredfunds[m].de > filteredfunds[m+1].de)
+						{
+
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+					}
+					}}}}
+
+					 if (filteredfunds[m].ronw !== 1000) {
+                                                        if (filteredfunds[m].ronw !== 100000) {
+                                                                        if (filteredfunds[m+1].ronw !== 1000) {
+                                                        if (filteredfunds[m+1].ronw !== 100000) {
+					if(j==2)
+					{
+						if(filteredfunds[m].ronw > filteredfunds[m+1].ronw)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+					}
+					}}}}
+
+
+					 if (filteredfunds[m].sales_growth !== 1000) {
+                                                        if (filteredfunds[m].sales_growth !== 100000) {
+                                                                if (filteredfunds[m+1].sales_growth !== 1000) {
+                                                        if (filteredfunds[m+1].sales_growth !== 100000) {
+					if(j==3)
+					{
+						if(filteredfunds[m].sales_growth > filteredfunds[m+1].sales_growth)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+					}
+					}}}}
+
+
+					 if (filteredfunds[m].np_growth !== 1000) {
+                                                        if (filteredfunds[m].np_growth !== 100000) {
+                                                                if (filteredfunds[m+1].np_growth !== 1000) {
+                                                        if (filteredfunds[m+1].np_growth !== 100000) {
+					if(j==4)
+					{
+						if(filteredfunds[m].np_growth > filteredfunds[m+1].np_growth)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+					}
+					}}}}
+
+
+					  if (filteredfunds[m].pledged !== 1000) {
+                                                        if (filteredfunds[m].pledged !== 100000) {
+                                                                if (filteredfunds[m+1].pledged !== 1000) {
+                                                        if (filteredfunds[m+1].pledged !== 100000) {
+					if(j==5)
+					{
+						if(filteredfunds[m].pledged > filteredfunds[m+1].pledged)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+
+					}
+					}}}}
+
+
+					 if (filteredfunds[m].inst !== 1000) {
+                                                        if (filteredfunds[m].inst !== 100000) {
+                                                                if (filteredfunds[m+1].inst !== 1000) {
+                                                        if (filteredfunds[m+1].inst !== 100000) {
+
+					if(j==6)
+					{
+
+						if(filteredfunds[m].inst > filteredfunds[m+1].inst)
+						{
+
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+					}
+					}}}}
+
+
+					if (filteredfunds[m].price !== 1000) {
+                                                        if (filteredfunds[m].price !== 100000) {
+                                                                if (filteredfunds[m+1].price !== 1000) {
+                                                        if (filteredfunds[m+1].price !== 100000) {
+					if(j==7)
+					{
+						
+						if(filteredfunds[m].price > filteredfunds[m+1].price)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+					}
+					}}}}
+
+
+					//  if (filteredfunds[m].f52_week_hl !== 1000) {
+     //                                                    if (filteredfunds[m].f52_week_hl !== 100000) {
+     //                                                            if (filteredfunds[m+1].f52_week_hl !== 1000) {
+     //                                                    if (filteredfunds[m+1].f52_week_hl !== 100000) {
+					// if(j==8)
+					// {
+					// 	if(filteredfunds[m].f52_week_hl > filteredfunds[m+1].f52_week_hl)
+					// 	{
+					// 		var t = filteredfunds[m];
+					// 		filteredfunds[m] = filteredfunds[m+1];
+					// 		filteredfunds[m+1] = t;
+					// 	}
+					// }
+					// }}}}
+
+
+
+					if (filteredfunds[m].trail_pe_ratio !== 1000) {
+                                                        if (filteredfunds[m].trail_pe_ratio !== 100000) {
+                                                                                if (filteredfunds[m+1].trail_pe_ratio !== 1000) {
+                                                        if (filteredfunds[m+1].trail_pe_ratio !== 100000) {
+					if(j==9)
+					{
+
+						if(filteredfunds[m].trail_pe_ratio > filteredfunds[m+1].trail_pe_ratio)
+						{
+
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+					}
+					}}}}
+
+					 
+				}
+			}
+		}
+		else if(choices[j] == "Descending" || choices[j] == "D")
+		{
+			for(var k =0;k<filteredfunds.length-1;k++)
+			{
+				for(var m=0;m<filteredfunds.length-1-k;m++)
+				{
+					
+					
+
+
+					
+							if(j==0)
+					{
+							if (filteredfunds[m].np !== 1000) {
+							if (filteredfunds[m].np !== 100000) {
+								if (filteredfunds[m+1].np !== 1000) {
+							if (filteredfunds[m+1].np !== 100000) {
+						if(filteredfunds[m].np < filteredfunds[m+1].np)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+						}}}}
+					}
+
+					if(j==1)
+					{
+							if (filteredfunds[m].de !== 1000) {
+							if (filteredfunds[m].de !== 100000) {
+								if (filteredfunds[m+1].de !== 1000) {
+							if (filteredfunds[m+1].de !== 100000) {
+						
+						if(filteredfunds[m].de < filteredfunds[m+1].de)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+						}}}}
+					}
+
+					if(j==2)
+					{
+							if (filteredfunds[m].ronw !== 1000) {
+							if (filteredfunds[m].ronw !== 100000) {
+									if (filteredfunds[m+1].ronw !== 1000) {
+							if (filteredfunds[m+1].ronw !== 100000) {
+						if(filteredfunds[m].ronw < filteredfunds[m+1].ronw)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+						}}}}
+					}
+
+					if(j==3)
+					{
+							if (filteredfunds[m].sales_growth !== 1000) {
+							if (filteredfunds[m].sales_growth !== 100000) {
+								if (filteredfunds[m+1].sales_growth !== 1000) {
+							if (filteredfunds[m+1].sales_growth !== 100000) {
+						if(filteredfunds[m].sales_growth < filteredfunds[m+1].sales_growth)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+						}}}}
+					}
+
+					if(j==4)
+					{
+							if (filteredfunds[m].np_growth !== 1000) {
+							if (filteredfunds[m].np_growth !== 100000) {
+								if (filteredfunds[m+1].np_growth !== 1000) {
+							if (filteredfunds[m+1].np_growth !== 100000) {
+						if(filteredfunds[m].np_growth < filteredfunds[m+1].np_growth)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+						}}}}
+					}
+
+					if(j==5)
+					{
+							if (filteredfunds[m].pledged !== 1000) {
+							if (filteredfunds[m].pledged !== 100000) {
+								if (filteredfunds[m+1].pledged !== 1000) {
+							if (filteredfunds[m+1].pledged !== 100000) {
+						if(filteredfunds[m].pledged < filteredfunds[m+1].pledged)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+						}}}}
+					}
+
+					if(j==6)
+					{
+							if (filteredfunds[m].inst !== 1000) {
+							if (filteredfunds[m].inst !== 100000) {
+								if (filteredfunds[m+1].inst !== 1000) {
+							if (filteredfunds[m+1].inst !== 100000) {
+
+						if(filteredfunds[m].inst < filteredfunds[m+1].inst)
+						{
+
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+						}}}}
+					}
+
+					if(j==7)
+					{
+							if (filteredfunds[m].price !== 1000) {
+							if (filteredfunds[m].price !== 100000) {
+								if (filteredfunds[m+1].price !== 1000) {
+							if (filteredfunds[m+1].price !== 100000) {
+						
+						if(filteredfunds[m].price < filteredfunds[m+1].price)
+						{
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+						}}}}
+					}
+
+					// if(j==8)
+					// {
+					// 		if (filteredfunds[m].f52_week_hl !== 1000) {
+					// 		if (filteredfunds[m].f52_week_hl !== 100000) {
+					// 			if (filteredfunds[m+1].f52_week_hl !== 1000) {
+					// 		if (filteredfunds[m+1].f52_week_hl !== 100000) {
+					// 	if(filteredfunds[m].f52_week_hl < filteredfunds[m+1].f52_week_hl)
+					// 	{
+					// 		var t = filteredfunds[m];
+					// 		filteredfunds[m] = filteredfunds[m+1];
+					// 		filteredfunds[m+1] = t;
+					// 	}
+					// 	}}}}
+					// }
+
+
+					if(j==9)
+					{
+							if (filteredfunds[m].trail_pe_ratio !== 1000) {
+							if (filteredfunds[m].trail_pe_ratio !== 100000) {
+										if (filteredfunds[m+1].trail_pe_ratio !== 1000) {
+							if (filteredfunds[m+1].trail_pe_ratio !== 100000) {
+
+						if(filteredfunds[m].trail_pe_ratio < filteredfunds[m+1].trail_pe_ratio)
+						{
+
+							var t = filteredfunds[m];
+							filteredfunds[m] = filteredfunds[m+1];
+							filteredfunds[m+1] = t;
+						}
+						}}}}
+					}
+					
+
+					
+
+
+
+					
+				}
+			}
+		}
+
+
+		
+		
+	
+	}
+
+		
+	var content = "";
+
+	if(selectedmode === "practise")
+	{
+
+	        content = "<table><tbody><tr class='head'>"+
+        "<td> Select Fund </td>"+
+        
+        "<td> Company Name </td>"+
+        "<td> NP  </td>"+
+		"<td> DE</td>"+
+        "<td> Ronw </td>"+
+  		"<td> Sales Growth </td>"+
+        "<td> NP Growth</td>"+
+        "<td> Pledged </td>"+
+        "<td> Inst Holding</td>"+
+        "<td> Price </td>"+
+        "<td> 52 week HL </td>"+
+        "<td> Trail PE Ratio </td>"+
+        "<td> Sector </td>"+
+        "<td> Prev Year Return </td>"+
+        "</tr>";
+      }
+      else
+      {
+
+	        content = "<table><tbody><tr class='head'>"+
+        "<td> Select Fund </td>"+
+        
+        "<td> Company Name </td>"+
+        "<td> NP  </td>"+
+		"<td> DE</td>"+
+        "<td> Ronw </td>"+
+  		"<td> Sales Growth </td>"+
+        "<td> NP Growth</td>"+
+        "<td> Pledged </td>"+
+        "<td> Inst Holding</td>"+
+        "<td> Price </td>"+
+        "<td> 52 week HL </td>"+
+        "<td> Trail PE Ratio </td>"+
+        "<td> Sector </td>"+
+        "<td> Prev Year Return </td>"+
+        "</tr>";
+      }
+        $(".tablecontents").html(content);
+	for(var i =0;i<filteredfunds.length;i++)
+	{
+		var xx = filteredfunds[i].bse_symbol;
+
+		
+		   					
+		
+							var npt = filteredfunds[i].np;
+
+                                if (npt === -1000 || npt === -100000)
+                                {
+                                        npt = "NA";
+                                }
+                                else
+                                {
+                                        npt = npt.toFixed(2);
+                                }
+
+                                var det = filteredfunds[i].de;
+                                if (det === -1000 || det === -100000)
+                                {
+                                        det = "NA";
+                                }
+                                else
+                                {
+                                        det = det.toFixed(2);
+                                }
+
+                                var ronwt = filteredfunds[i].ronw;
+                                if (ronwt === -1000 || ronwt === -100000)
+                                {
+                                        ronwt = "NA";
+                                }
+                                else
+                                {
+                                        ronwt = ronwt.toFixed(2);
+                                }
+
+                                var sales_growtht = filteredfunds[i].sales_growth;
+
+                                if (sales_growtht === -1000 || sales_growtht === -100000)
+                                {
+                                        sales_growtht = "NA";
+                                }
+                                else
+                                {
+                                        sales_growtht = sales_growtht.toFixed(2);
+                                }
+
+                                var np_growtht = filteredfunds[i].np_growth;
+                                if (np_growtht === -1000 || np_growtht === -100000)
+                                {
+                                        np_growtht = "NA";
+                                }
+                                else
+                                {
+                                        np_growtht = np_growtht.toFixed(2);
+                                }
+
+                                var pledgedt = filteredfunds[i].pledged;
+                                if (pledgedt === -1000 || pledgedt === -100000)
+                                {
+                                        pledgedt = "NA";
+                                }
+                                else
+                                {
+                                        pledgedt = pledgedt.toFixed(2);
+                                }
+
+                                var instt = filteredfunds[i].inst;
+                                if (instt === -1000 || instt === 100000)
+                                {
+                                        instt = "NA";
+                                }
+                                else
+                                {
+                                        instt = instt.toFixed(2);
+                                }
+
+                                var pricet = filteredfunds[i].price;
+                                if (pricet === -1000 || pricet === -1000)
+                                {
+                                        pricet = "NA";
+                                }
+                                else
+                                {
+                                        pricet = pricet.toFixed(2);
+                                }
+
+                                var f52_week_hlt = filteredfunds[i].f52_week_hl;
+                                if (f52_week_hlt === -1000 || f52_week_hlt === -100000)
+                                {
+                                        f52_week_hlt = "NA";
+                                }
+                                else
+                                {
+                                        f52_week_hlt = f52_week_hlt;
+                                }
+
+                                var trail_pe_ratiot = filteredfunds[i].trail_pe_ratio;
+                                if (trail_pe_ratiot === -1000 || trail_pe_ratiot === -100000)
+                                {
+                                        trail_pe_ratiot = "NA";
+                                }
+                                else
+                                {
+                                        trail_pe_ratiot = trail_pe_ratiot;
+                                }
+
+
+                if(selectedmode ==="practise")
+               	{             
+
+               		
+
+                                
+							if(filteredfunds[i].isfundselected === true && parseInt(filteredfunds[i].previousyearreturn) !== 0 ) 
+								{
+									// console.log("Will go here");
+												content = content + "<tr>"+
+													"<td>" + "<input type='checkbox' id='chkfnd"+i+"' name='"+filteredfunds[i].bse_symbol+"' onclick=selectAll('"+i+"','f') checked>" + "</td>"+
+													
+							                        "<td>" +filteredfunds[i].company_name +"</td>"+
+							                        "<td>"+ npt+ "</td>"+
+													"<td>"+ det +"</td>"+
+							                        "<td>"+ ronwt+ "</td>"+
+							                   		"<td>" + sales_growtht+"</td>"+
+							                        "<td>" + np_growtht+"</td>"+
+							                        "<td>" + pledgedt+"</td>"+
+							                        "<td>" + instt+"</td>"+
+							                        "<td>" + pricet+"</td>"+
+							                        "<td>" + f52_week_hlt+"</td>"+
+							                        "<td>" + trail_pe_ratiot+"</td>"+
+							                        "<td>"+ filteredfunds[i].sector+ "</td>"+
+							                        "<td>"+ (((filteredfunds[i].price - filteredfunds[i].previousyearreturn)/filteredfunds[i].previousyearreturn ) * 100.0).toFixed(2)+ " %</td>"+
+													"</tr>";
+								}
+									else if(filteredfunds[i].isfundselected === true && parseInt(filteredfunds[i].previousyearreturn) === 0 && parseInt(filteredfunds[i].previousyearreturn) !== 0 ) 
+								{
+									// console.log("Will go here");
+												content = content + "<tr>"+
+													"<td>" + "<input type='checkbox' id='chkfnd"+i+"' name='"+filteredfunds[i].bse_symbol+"' onclick=selectAll('"+i+"','f') checked>" + "</td>"+
+													
+							                        "<td>" +filteredfunds[i].company_name +"</td>"+
+							                        "<td>"+ npt+ "</td>"+
+													"<td>"+ det +"</td>"+
+							                        "<td>"+ ronwt+ "</td>"+
+							                   		"<td>" + sales_growtht+"</td>"+
+							                        "<td>" + np_growtht+"</td>"+
+							                        "<td>" + pledgedt+"</td>"+
+							                        "<td>" + instt+"</td>"+
+							                        "<td>" + pricet+"</td>"+
+							                        "<td>" + f52_week_hlt+"</td>"+
+							                        "<td>" + trail_pe_ratiot+"</td>"+
+							                        "<td>"+ filteredfunds[i].sector+ "</td>"+
+							                        "<td>"+ (((filteredfunds[i].price - filteredfunds[i].previousyearreturn)/filteredfunds[i].price ) * 100.0).toFixed(2)+ " %</td>"+
+													"</tr>";
+								}
+								else if(parseInt(filteredfunds[i].previousyearreturn) !== 0 )
+								{
+												content = content + "<tr>"+
+													"<td>" + "<input type='checkbox' id='chkfnd"+i+"' name='"+filteredfunds[i].bse_symbol+"' onclick=selectAll('"+i+"','f')>" + " </td>"+
+													
+							                        "<td>" +filteredfunds[i].company_name +"</td>"+
+							                        "<td>"+ npt+ "</td>"+
+													"<td>"+ det +"</td>"+
+							                        "<td>"+ ronwt+ "</td>"+
+							                   		"<td>" + sales_growtht+"</td>"+
+							                        "<td>" + np_growtht+"</td>"+
+							                        "<td>" + pledgedt+"</td>"+
+							                        "<td>" + instt+"</td>"+
+							                        "<td>" + pricet+"</td>"+
+							                        "<td>" + f52_week_hlt+"</td>"+
+							                        "<td>" + trail_pe_ratiot+"</td>"+
+							                        "<td>"+ filteredfunds[i].sector+ "</td>"+
+							                        "<td>"+ (((filteredfunds[i].price - filteredfunds[i].previousyearreturn)/filteredfunds[i].previousyearreturn ) * 100.0).toFixed(2)+ " %</td>"+
+													"</tr>";
+								}
+
+								// Uncomment this if you want funds to be shown whose previous year return is 0
+
+								// else if( parseInt(filteredfunds[i].previousyearreturn) === 0  && parseInt(filteredfunds[i].price) !== 0)
+								// {
+								// 				content = content + "<tr>"+
+								// 					"<td>" + "<input type='checkbox' id='chkfnd"+i+"' name='"+filteredfunds[i].bse_symbol+"' onclick=selectAll('"+i+"','f')>" + " </td>"+
+													
+							 //                        "<td>" +filteredfunds[i].company_name +"</td>"+
+							 //                        "<td>"+ npt+ "</td>"+
+								// 					"<td>"+ det +"</td>"+
+							 //                        "<td>"+ ronwt+ "</td>"+
+							 //                   		"<td>" + sales_growtht+"</td>"+
+							 //                        "<td>" + np_growtht+"</td>"+
+							 //                        "<td>" + pledgedt+"</td>"+
+							 //                        "<td>" + instt+"</td>"+
+							 //                        "<td>" + pricet+"</td>"+
+							 //                        "<td>" + f52_week_hlt+"</td>"+
+							 //                        "<td>" + trail_pe_ratiot+"</td>"+
+							 //                        "<td>"+ filteredfunds[i].sector+ "</td>"+
+							 //                        "<td>"+ (((filteredfunds[i].price - filteredfunds[i].previousyearreturn)/filteredfunds[i].price ) * 100.0).toFixed(2)+ " %</td>"+
+								// 					"</tr>";
+								// }
+
+				}
+				else
+				{
+					// console.log("Old return "+filteredfunds[i].oldreturn);
+
+							if(filteredfunds[i].isfundselected === true && parseInt(filteredfunds[i].oldreturn) !== 0 ) 
+								{
+									content = content + "<tr>"+
+													"<td>" + "<input type='checkbox' id='chkfnd"+i+"' name='"+filteredfunds[i].bse_symbol+"' onclick=selectAll('"+i+"','f') checked>" + "</td>"+
+													
+							                        "<td>" +filteredfunds[i].company_name +"</td>"+
+							                        "<td>"+ npt+ "</td>"+
+													"<td>"+ det +"</td>"+
+							                        "<td>"+ ronwt+ "</td>"+
+							                   		"<td>" + sales_growtht+"</td>"+
+							                        "<td>" + np_growtht+"</td>"+
+							                        "<td>" + pledgedt+"</td>"+
+							                        "<td>" + instt+"</td>"+
+							                        "<td>" + pricet+"</td>"+
+							                        "<td>" + f52_week_hlt+"</td>"+
+							                        "<td>" + trail_pe_ratiot+"</td>"+
+							                        "<td>"+ filteredfunds[i].sector+ "</td>"+
+							                      "<td>"+ (((filteredfunds[i].price - filteredfunds[i].oldreturn)/filteredfunds[i].oldreturn ) * 100.0).toFixed(2)+ " %</td>"+
+													"</tr>";
+								}
+									else if(filteredfunds[i].isfundselected === true && parseInt(filteredfunds[i].oldreturn) === 0 && parseInt(filteredfunds[i].oldreturn) !== 0 ) 
+								{
+												content = content + "<tr>"+
+													"<td>" + "<input type='checkbox' id='chkfnd"+i+"' name='"+filteredfunds[i].bse_symbol+"' onclick=selectAll('"+i+"','f') checked>" + "</td>"+
+													
+							                        "<td>" +filteredfunds[i].company_name +"</td>"+
+							                        "<td>"+ npt+ "</td>"+
+													"<td>"+ det +"</td>"+
+							                        "<td>"+ ronwt+ "</td>"+
+							                   		"<td>" + sales_growtht+"</td>"+
+							                        "<td>" + np_growtht+"</td>"+
+							                        "<td>" + pledgedt+"</td>"+
+							                        "<td>" + instt+"</td>"+
+							                        "<td>" + pricet+"</td>"+
+							                        "<td>" + f52_week_hlt+"</td>"+
+							                        "<td>" + trail_pe_ratiot+"</td>"+
+							                        "<td>"+ filteredfunds[i].sector+ "</td>"+
+							                    "<td>"+ (((filteredfunds[i].price - filteredfunds[i].oldreturn)/filteredfunds[i].price ) * 100.0).toFixed(2)+ " %</td>"+
+													"</tr>";
+								}
+								else if(parseInt(filteredfunds[i].oldreturn) !== 0 )
+								{
+												content = content + "<tr>"+
+													"<td>" + "<input type='checkbox' id='chkfnd"+i+"' name='"+filteredfunds[i].bse_symbol+"' onclick=selectAll('"+i+"','f')>" + " </td>"+
+													
+							                        "<td>" +filteredfunds[i].company_name +"</td>"+
+							                        "<td>"+ npt+ "</td>"+
+													"<td>"+ det +"</td>"+
+							                        "<td>"+ ronwt+ "</td>"+
+							                   		"<td>" + sales_growtht+"</td>"+
+							                        "<td>" + np_growtht+"</td>"+
+							                        "<td>" + pledgedt+"</td>"+
+							                        "<td>" + instt+"</td>"+
+							                        "<td>" + pricet+"</td>"+
+							                        "<td>" + f52_week_hlt+"</td>"+
+							                        "<td>" + trail_pe_ratiot+"</td>"+
+							                        "<td>"+ filteredfunds[i].sector+ "</td>"+
+							                    	"<td>"+ (((filteredfunds[i].price - filteredfunds[i].oldreturn)/filteredfunds[i].oldreturn ) * 100.0).toFixed(2)+ " %</td>"+
+													"</tr>";
+								}
+								else {
+									
+								}
+								
+
+								// Uncomment this if you want funds to be shown whose previous year return is 0
+
+								// else if( parseInt(filteredfunds[i].previousyearreturn) === 0  && parseInt(filteredfunds[i].price) !== 0)
+								// {
+								// 				content = content + "<tr>"+
+								// 					"<td>" + "<input type='checkbox' id='chkfnd"+i+"' name='"+filteredfunds[i].bse_symbol+"' onclick=selectAll('"+i+"','f')>" + " </td>"+
+													
+							 //                        "<td>" +filteredfunds[i].company_name +"</td>"+
+							 //                        "<td>"+ npt+ "</td>"+
+								// 					"<td>"+ det +"</td>"+
+							 //                        "<td>"+ ronwt+ "</td>"+
+							 //                   		"<td>" + sales_growtht+"</td>"+
+							 //                        "<td>" + np_growtht+"</td>"+
+							 //                        "<td>" + pledgedt+"</td>"+
+							 //                        "<td>" + instt+"</td>"+
+							 //                        "<td>" + pricet+"</td>"+
+							 //                        "<td>" + f52_week_hlt+"</td>"+
+							 //                        "<td>" + trail_pe_ratiot+"</td>"+
+							 //                        "<td>"+ filteredfunds[i].sector+ "</td>"+
+								// 					"</tr>";
+								// }
+
+				}
+	
+
+
+
+
+
+}	
+	
+	content= content + "</tbody</table>";
+	$(".tablecontents").html(content);
+
+	
+
+}
+
+function changechoices(x)
+{
+	//  console.log(x);
+}
+
+$(document).on('change','#s1newer', function () {
+    var selectedCountry = $(this).children("option:selected").val();
+    
+   choices[0] = selectedCountry;
+   filterfunds();
+   $("#s1newer").val(selectedCountry);
+});
+
+$(document).on('change','#s2newer', function () {
+
+		
+
+    	var selectedCountry = $(this).children("option:selected").val();
+    	
+   		choices[1] = selectedCountry;
+   		
+   		
+   		filterfunds();
+
+   		$("#s2newer").val(selectedCountry);
+
+    	
+	});
+
+$(document).on('change','#s3newer', function () {
+    var selectedCountry = $(this).children("option:selected").val();
+   choices[2] = selectedCountry;
+   filterfunds();
+   $("#s3newer").val(selectedCountry);
+});
+
+$(document).on('change','#s4newer', function () {
+    var selectedCountry = $(this).children("option:selected").val();
+   choices[3] = selectedCountry;
+   filterfunds();
+   $("#s4newer").val(selectedCountry);
+});
+
+$(document).on('change','#s5newer', function () {
+    var selectedCountry = $(this).children("option:selected").val();
+   choices[4] = selectedCountry;
+   filterfunds();
+   $("#s5newer").val(selectedCountry);
+});
+
+$(document).on('change','#s6newer', function () {
+    var selectedCountry = $(this).children("option:selected").val();
+   choices[5] = selectedCountry;
+   filterfunds();
+   $("#s6newer").val(selectedCountry);
+});
+
+$(document).on('change','#s7newer', function () {
+    var selectedCountry = $(this).children("option:selected").val();
+   choices[6] = selectedCountry;
+   filterfunds();
+   $("#s7newer").val(selectedCountry);
+});
+
+$(document).on('change','#s8newer', function () {
+    var selectedCountry = $(this).children("option:selected").val();
+   choices[7] = selectedCountry;
+   filterfunds();
+   $("#s8newer").val(selectedCountry);
+});
+
+$(document).on('change','#s9newer', function () {
+    var selectedCountry = $(this).children("option:selected").val();
+   choices[8] = selectedCountry;
+   filterfunds();
+   $("#s9newer").val(selectedCountry);
+});
+
+$(document).on('change','#s10newer', function () {
+    var selectedCountry = $(this).children("option:selected").val();
+   choices[9] = selectedCountry;
+   filterfunds();
+   $("#s10newer").val(selectedCountry);
+});
+
+var npressed = false;
+
+function nextpressed()
+{
+
+    
+	npressed = true;
+    $(".hider").css("display","none");
+    $(".sec2 .aboveselect").css("display","none");
+    $(".next").css("display","none");
+     $(".sec2 select").css("display","none");
+    $(".nextsection").css("display","block");
+    $(".tablecontents").css("display","none");
+    $(".addfilter").css("display","none");
+    $(".individualfilters").css("display","none");
+    $(".selectall button").css("display","none");
+    var content = "";
+    if(selectedmode === "latest") {
+    	 content = "<table><tbody><tr class='head'>"+
+        
+        "<td> Company Name </td>"+
+        "<td> NP  </td>"+
+		"<td> DE</td>"+
+        "<td> Ronw </td>"+
+  		"<td> Sales Growth </td>"+
+        "<td> NP Growth</td>"+
+        "<td> Pledged </td>"+
+        "<td> Inst Holding</td>"+
+        "<td> Price </td>"+
+        "<td> 52 week HL </td>"+
+        "<td> Trail PE Ratio </td>"+
+        "<td> Sector </td>"+
+        
+        "</tr>";
+    }
+    else if(selectedmode === "practise2")
+    {
+    	 content = "<table><tbody><tr class='head'>"+
+       
+        
+        "<td> Company </td>"+
+        "<td> Book Value  </td>"+
+		"<td> Debt to Equity</td>"+
+        "<td> Dividend Yield </td>"+
+  		"<td> Free cash flow </td>"+
+        "<td> Inst holding change %</td>"+
+        "<td> Operating profit growth % </td>"+
+        "<td> Pat</td>"+
+        "<td> Pat Growth %</td>"+
+        "<td> PE Ratio </td>"+
+        "<td> Pledge %</td>"+
+        "<td> Previous Year Return %</td>"+
+        "<td> Roe % </td>"+
+        "<td> Sector </td>"+
+        "<td> Sector Performance %</td>"+
+        "<td> Tradaeble Volume </td>"+
+        "</tr>";
+    }
+    else
+    {
+         content = "<table><tbody><tr class='head'>"+
+        
+        
+        "<td> Company Name </td>"+
+        "<td> NP  </td>"+
+		"<td> DE</td>"+
+        "<td> Ronw </td>"+
+  		"<td> Sales Growth </td>"+
+        "<td> NP Growth</td>"+
+        "<td> Pledged </td>"+
+        "<td> Inst Holding</td>"+
+        "<td> Price </td>"+
+        "<td> 52 week HL </td>"+
+        "<td> Trail PE Ratio </td>"+
+        "<td> Sector </td>"+
+        "<td> Actual Rank </td>"+
+        "<td> Return </td>"+
+        "</tr>";
+    }
+
+
+
+
+    if(selectedmode === "practise2")
+    {
+    	selectedfundslength = 0;
+	var sumavg  = 0;
+	for(var i =0;i<selectedfunds.length;i++)
+    	{
+        	
+    		if(selectedfunds[i] === undefined || selectedfunds[i] === "undefined" )
+    		{
+
+    		}
+    		else
+    		{
+				selectedfundslength = selectedfundslength + 1;
+				
+
+					      
+					         	
+
+					         	
+
+					         		var retc = parseFloat(selectedfunds[i].previousyearreturn);
+					         		
+					         		
+					         	
+					         		sumavg = sumavg + parseFloat(retc);
+
+					        				content = content + "<tr>"+
+					                       
+					                        
+					                        "<td>" +selectedfunds[i].company +"</td>"+
+					                        "<td>"+ selectedfunds[i].bookvalue+ "</td>"+
+											"<td>"+ selectedfunds[i].debttoequity +"</td>"+
+					                        "<td>"+ selectedfunds[i].dividendyield+ "</td>"+
+					                   		"<td>" + selectedfunds[i].freecashflow+"</td>"+
+					                        "<td>" + selectedfunds[i].instholdingcharge+"</td>"+
+					                        "<td>" + selectedfunds[i].operatingprofitgrowth+"</td>"+
+					                        "<td>" + selectedfunds[i].pat+"</td>"+
+					                        "<td>" + selectedfunds[i].patgrowth+"</td>"+
+					                        "<td>" + selectedfunds[i].peratio+"</td>"+
+					                        "<td>" + selectedfunds[i].pledge+"</td>"+
+					                        "<td>" + selectedfunds[i].previousyearreturn+"</td>"+
+					                        "<td>" + selectedfunds[i].roe+"</td>"+
+					                        "<td>" + selectedfunds[i].sector+"</td>"+
+					                        "<td>" + selectedfunds[i].sectorperformance+"</td>"+
+					                        "<td>" + selectedfunds[i].tradeablevolume+"</td>"+
+					                        
+					                        "</tr>";
+					            
+														
+        	}
+    	}
+    	// console.log(content);
+    content= content + "</tbody</table>";
+    $(".tablefundsuser").html(content);
+    var avgg = sumavg / parseFloat(selectedfundslength);
+    $("#tableuserfooter").text("Average Return  "+avgg.toFixed(2)+" %");
+    $("#showingfundscount").text("Showing "+selectedfunds.length+" Equities");
+    
+
+
+
+
+ var content = "<table><tbody><tr class='head'>"+
+      
+        "<td> Company </td>"+
+        "<td> Book Value  </td>"+
+		"<td> Debt to Equity</td>"+
+        "<td> Dividend Yield </td>"+
+  		"<td> Free cash flow </td>"+
+        "<td> Inst holding change %</td>"+
+        "<td> Operating profit growth % </td>"+
+        "<td> Pat</td>"+
+        "<td> Pat Growth %</td>"+
+        "<td> PE Ratio </td>"+
+        "<td> Pledge %</td>"+
+        "<td> Previous Year Return %</td>"+
+        "<td> Roe % </td>"+
+        "<td> Sector </td>"+
+        "<td> Sector Performance %</td>"+
+        "<td> Tradaeble Volume </td>"+
+        "</tr>";
+
+    for(var i =0;i<selectedfunds.length;i++)
+    {
+		
+
+	
+
+						        content = content + "<tr>"+
+						                       
+						                       
+						                       "<td>" +selectedfunds[i].company +"</td>"+
+					                        "<td>"+ selectedfunds[i].bookvalue+ "</td>"+
+											"<td>"+ selectedfunds[i].debttoequity +"</td>"+
+					                        "<td>"+ selectedfunds[i].dividendyield+ "</td>"+
+					                   		"<td>" + selectedfunds[i].freecashflow+"</td>"+
+					                        "<td>" + selectedfunds[i].instholdingcharge+"</td>"+
+					                        "<td>" + selectedfunds[i].operatingprofitgrowth+"</td>"+
+					                        "<td>" + selectedfunds[i].pat+"</td>"+
+					                        "<td>" + selectedfunds[i].patgrowth+"</td>"+
+					                        "<td>" + selectedfunds[i].peratio+"</td>"+
+					                        "<td>" + selectedfunds[i].pledge+"</td>"+
+					                        "<td>" + selectedfunds[i].previousyearreturn+"</td>"+
+					                        "<td>" + selectedfunds[i].roe+"</td>"+
+					                        "<td>" + selectedfunds[i].sector+"</td>"+
+					                        "<td>" + selectedfunds[i].sectorperformance+"</td>"+
+					                        "<td>" + selectedfunds[i].tradeablevolume+"</td>"+
+						                        "</tr>";					
+    }
+    }
+    else
+    {
+    	selectedfundslength = 0;
+	var sumavg  = 0;
+	for(var i =0;i<selectedfunds.length;i++)
+    	{
+        	
+    		if(selectedfunds[i] === undefined || selectedfunds[i] === "undefined" )
+    		{
+
+    		}
+    		else
+    		{
+				selectedfundslength = selectedfundslength + 1;
+				var npt = selectedfunds[i].np;
+				if (npt === -1000 || npt === -100000)
+                				{
+                    				npt = "NA";
+                				}
+ 								else
+                                {
+                                        npt = npt;
+                                }
+
+                                var det = selectedfunds[i].de;
+                                if (det === -1000 || det === -100000)
+                                {
+                                        det = "NA";
+                                }
+                                else
+                                {
+                                        det = det;
+                                }
+
+                                var ronwt = selectedfunds[i].ronw;
+                                if (ronwt === -1000 || ronwt === -100000)
+                                {
+                                        ronwt = "NA";
+                                }
+                                else
+                                {
+                                        ronwt = ronwt;
+                                }
+
+                                var sales_growtht = selectedfunds[i].sales_growth;
+
+                                if (sales_growtht === -1000 || sales_growtht === -100000)
+                                {
+                                        sales_growtht = "NA";
+                                }
+                                else
+                                {
+                                        sales_growtht = sales_growtht;
+                                }
+
+                                var np_growtht = selectedfunds[i].np_growth;
+                                if (np_growtht === -1000 || np_growtht === -100000)
+                                {
+                                        np_growtht = "NA";
+                                }
+                                else
+                                {
+                                        np_growtht = np_growtht;
+                                }
+
+                                var pledgedt = selectedfunds[i].pledged;
+                                if (pledgedt === -1000 || pledgedt === -100000)
+                                {
+                                        pledgedt = "NA";
+                                }
+                                else
+                                {
+                                        pledgedt = pledgedt;
+                                }
+
+                                var instt = selectedfunds[i].inst;
+                                if (instt === -1000 || instt === 100000)
+                                {
+                                        instt = "NA";
+                                }
+                                else
+                                {
+                                        instt = instt;
+                                }
+
+                                var pricet = selectedfunds[i].price;
+                                if (pricet === -1000 || pricet === -1000)
+                                {
+                                        pricet = "NA";
+                                }
+                                else
+                                {
+                                        pricet = pricet;
+                                }
+
+                                var f52_week_hlt = selectedfunds[i].f52_week_hl;
+                                if (f52_week_hlt === -1000 || f52_week_hlt === -100000)
+                                {
+                                        f52_week_hlt = "NA";
+                                }
+                                else
+                                {
+                                        f52_week_hlt = f52_week_hlt;
+                                }
+
+                                var trail_pe_ratiot = selectedfunds[i].trail_pe_ratio;
+                                if (trail_pe_ratiot === -1000 || trail_pe_ratiot === -100000)
+                                {
+                                        trail_pe_ratiot = "NA";
+                                }
+                                else
+                                {
+                                        trail_pe_ratiot = trail_pe_ratiot;
+                                }
+
+					         	if(selectedmode === "latest")
+					         	{
+
+					         		var retc = (parseFloat(pricet) - parseFloat(selectedfunds[i].oldreturn))/parseFloat(pricet) ;
+					         		if(parseFloat(selectedfunds[i].oldreturn) === 0 || parseFloat(pricet) === 0.0)
+					         		{
+					         			retc = 0;
+					         		}
+					         		retc = (retc*100).toFixed(3);
+					         		sumavg = sumavg + parseFloat(retc);
+
+
+					         				content = content + "<tr>"+
+					                       
+					                        
+					                        "<td>" +selectedfunds[i].company_name +"</td>"+
+					                        "<td>"+ npt+ "</td>"+
+											"<td>"+ det +"</td>"+
+					                        "<td>"+ ronwt+ "</td>"+
+					                   		"<td>" + sales_growtht+"</td>"+
+					                        "<td>" + np_growtht+"</td>"+
+					                        "<td>" + pledgedt+"</td>"+
+					                        "<td>" + instt+"</td>"+
+					                        "<td>" + pricet+"</td>"+
+					                        "<td>" + f52_week_hlt+"</td>"+
+					                        "<td>" + trail_pe_ratiot+"</td>"+
+					                        "<td>" + selectedfunds[i].sector+"</td>"+
+					                        
+					                        "</tr>";	
+					         	}   
+					         	else
+					         	{
+
+					         	
+
+					         		var retc = (parseFloat(selectedfunds[i].oldreturn) - parseFloat(pricet))/parseFloat(pricet) ;
+					         		if(parseFloat(selectedfunds[i].oldreturn) === 0  || parseFloat(pricet) === 0.0)
+					         		{
+					         			retc = 0;
+					         		}
+					         		retc = (retc*100).toFixed(3);
+					         	
+					         		sumavg = sumavg + parseFloat(retc);
+
+					        				content = content + "<tr>"+
+					                       
+					                        
+					                        "<td>" +selectedfunds[i].company_name +"</td>"+
+					                        "<td>"+ npt+ "</td>"+
+											"<td>"+ det +"</td>"+
+					                        "<td>"+ ronwt+ "</td>"+
+					                   		"<td>" + sales_growtht+"</td>"+
+					                        "<td>" + np_growtht+"</td>"+
+					                        "<td>" + pledgedt+"</td>"+
+					                        "<td>" + instt+"</td>"+
+					                        "<td>" + pricet+"</td>"+
+					                        "<td>" + f52_week_hlt+"</td>"+
+					                        "<td>" + trail_pe_ratiot+"</td>"+
+					                        "<td>" + selectedfunds[i].sector+"</td>"+
+					                        "<td>" + selectedfunds[i].actualrank+"</td>"+
+					                        "<td>" + retc+" %</td>"+
+					                        "</tr>";
+					            }
+														
+        	}
+    	}
+    	// console.log(content);
+    content= content + "</tbody</table>";
+    $(".tablefundsuser").html(content);
+    var avgg = sumavg / parseFloat(selectedfundslength);
+    $("#tableuserfooter").text("Average Return  "+avgg.toFixed(2)+" %");
+    $("#showingfundscount").text("Showing "+selectedfunds.length+" Equities");
+    if(selectedmode === "latest")
+    {
+    	$("#tableuserfooter").css("display","none");
+    }
+
+
+
+
+ var content = "<table><tbody><tr class='head'>"+
+      
+        "<td> Company Name </td>"+
+        "<td> NP  </td>"+
+		"<td> DE</td>"+
+        "<td> Ronw </td>"+
+  		"<td> Sales Growth </td>"+
+        "<td> NP Growth</td>"+
+        "<td> Pledged </td>"+
+        "<td> Inst Holding</td>"+
+        "<td> Price </td>"+
+        "<td> 52 week HL </td>"+
+        "<td> Trail PE ratio </td>"+
+        "<td> Sector </td>"+
+        "</tr>";
+
+    for(var i =0;i<selectedfunds.length;i++)
+    {
+		var xx = filteredfunds[i].bse_symbol;
+    	
+    	
+
+    							var npt = filteredfunds[i].np;
+
+                                if (npt === -1000 || npt === -100000)
+                                {
+                                        npt = "NA";
+                                }
+                                else
+                                {
+                                        npt = npt;
+                                }
+
+                                var det = filteredfunds[i].de;
+                                if (det === -1000 || det === -100000)
+                                {
+                                        det = "NA";
+                                }
+                                else
+                                {
+                                        det = det;
+                                }
+
+                                var ronwt = filteredfunds[i].ronw;
+                                if (ronwt === -1000 || ronwt === -100000)
+                                {
+                                        ronwt = "NA";
+                                }
+                                else
+                                {
+                                        ronwt = ronwt;
+                                }
+
+                                var sales_growtht = filteredfunds[i].sales_growth;
+
+                                if (sales_growtht === -1000 || sales_growtht === -100000)
+                                {
+                                        sales_growtht = "NA";
+                                }
+                                else
+                                {
+                                        sales_growtht = sales_growtht;
+                                }
+
+                                var np_growtht = filteredfunds[i].np_growth;
+                                if (np_growtht === -1000 || np_growtht === -100000)
+                                {
+                                        np_growtht = "NA";
+                                }
+                                else
+                                {
+                                        np_growtht = np_growtht;
+                                }
+
+                                var pledgedt = filteredfunds[i].pledged;
+                                if (pledgedt === -1000 || pledgedt === -100000)
+                                {
+                                        pledgedt = "NA";
+                                }
+                                else
+                                {
+                                        pledgedt = pledgedt;
+                                }
+
+                                var instt = filteredfunds[i].inst;
+                                if (instt === -1000 || instt === 100000)
+                                {
+                                        instt = "NA";
+                                }
+                                else
+                                {
+                                        instt = instt;
+                                }
+
+                                var pricet = filteredfunds[i].price;
+                                if (pricet === -1000 || pricet === -1000)
+                                {
+                                        pricet = "NA";
+                                }
+                                else
+                                {
+                                        pricet = pricet;
+                                }
+
+                                var f52_week_hlt = filteredfunds[i].f52_week_hl;
+                                if (f52_week_hlt === -1000 || f52_week_hlt === -100000)
+                                {
+                                        f52_week_hlt = "NA";
+                                }
+                                else
+                                {
+                                        f52_week_hlt = f52_week_hlt;
+                                }
+
+                                var trail_pe_ratiot = filteredfunds[i].trail_pe_ratio;
+                                if (trail_pe_ratiot === -1000 || trail_pe_ratiot === -100000)
+                                {
+                                        trail_pe_ratiot = "NA";
+                                }
+                                else
+                                {
+                                        trail_pe_ratiot = trail_pe_ratiot;
+                                }
+
+	
+
+						        content = content + "<tr>"+
+						                       
+						                       
+						                        "<td>" +filteredfunds[i].company_name +"</td>"+
+						                        "<td>"+ npt+ "</td>"+
+												"<td>"+ det +"</td>"+
+						                        "<td>"+ ronwt+ "</td>"+
+						                   		"<td>" + sales_growtht+"</td>"+
+						                        "<td>" + np_growtht+"</td>"+
+						                        "<td>" + pledgedt+"</td>"+
+						                        "<td>" + instt+"</td>"+
+						                        "<td>" + pricet+"</td>"+
+						                        "<td>" + f52_week_hlt+"</td>"+
+						                        "<td>" + trail_pe_ratiot+"</td>"+
+						                        "<td>" + filteredfunds[i].sector+"</td>"+
+						                        "</tr>";					
+    }
+    }
+
+
+
+
+
+    
+ 
+    content= content + "</tbody</table>";
+    $(".tablefundsus").html(content);
+                               
+    
+    
+
+
+
+
+}
+
+
+var selectedfunds = [];
+var selectedfundslength = 0;
+
+function selectAll(x,s)
+{
+		// console.log("setting "+x+ " to "+!filteredfunds[x].isfundselected);
+	filteredfunds[x].isfundselected = !filteredfunds[x].isfundselected;
+	isfundselected[x] = !isfundselected[x];
+
+
+	var id = x;
+	if(wantedfunds.length === 0)
+	{
+		xx = filteredfunds[x].bse_symbol;
+	}
+	else
+	{
+		 xx = wantedfunds[x].bse_symbol;
+	}
+	
+	
+	if($("#chkfnd"+id).prop('checked') == true){
+
+		if(s === 'f') {
+			filteredfunds[x].isfundselected = true;
+		}
+		else
+		{
+			wantedfunds[x].isfundselected = true;
+		}
+    	
+    	if(wantedfunds.length === 0)
+		{
+			var found = false;
+			for(var k=0;k<selectedfunds.length;k++)
+			{
+				if(selectedfunds[k].bse_symbol === xx){
+					found = true;
+					break;
+				}
+			}
+			if(found === false){
+			selectedfunds.push(filteredfunds[x]);
+			}
+		}
+		else
+		{
+			var found = false;
+			for(var k=0;k<selectedfunds.length;k++)
+			{
+				if(selectedfunds[k].bse_symbol === xx){
+					found = true;
+					break;
+				}
+			}
+			if(found === false){
+		 	selectedfunds.push(wantedfunds[x]);
+		 	}
+		}
+    	
+    	
+    	
+	}
+	else
+	{
+		if(s === 'f') {
+			filteredfunds[x].isfundselected = false;
+		}
+		else
+		{
+			wantedfunds[x].isfundselected = false;
+		}
+    	
+		
+
+		for(var i=0;i<selectedfunds.length;i++)
+    	{
+    		// console.log(selectedfunds[i].bse_symbol);
+    		if(selectedfunds[i].bse_symbol === xx)
+    		{
+    			selectedfunds.splice(i,1);
+    		}
+
+    	}
+		
+	}
+
+	$("#showingselectedequities").text("Selected "+selectedfunds.length+" Equities");
+	// console.log("Tally Selected Funds");
+	// for(var i=0;i<selectedfunds.length;i++)
+ //    	{
+ //    		// console.log(selectedfunds[i].bse_symbol);
+ //    	}
+
+	// for(i=0;i<selectedfunds.length;i++)
+	// {
+	// 	if(selectedfunds[i] !== undefined && selectedfunds[i] !== "undefined")
+	// 	{
+	// 		// console.log(selectedfunds[i].fundsname);
+	// 	}
+	// }
+}
+
+
+
+
+function selectAllp2(x,s)
+{
+		// console.log("setting "+x+ " to "+!filteredfunds[x].isfundselected);
+	filteredfunds[x].isfundselected = !filteredfunds[x].isfundselected;
+	isfundselected[x] = !isfundselected[x];
+
+
+	var id = x;
+	if(wantedfunds.length === 0)
+	{
+		xx = filteredfunds[x].company;
+	}
+	else
+	{
+		 xx = wantedfunds[x].company;
+	}
+	
+	
+	if($("#chkfnd"+id).prop('checked') == true){
+
+		if(s === 'f') {
+			filteredfunds[x].isfundselected = true;
+		}
+		else
+		{
+			wantedfunds[x].isfundselected = true;
+		}
+    	
+    	if(wantedfunds.length === 0)
+		{
+			var found = false;
+			for(var k=0;k<selectedfunds.length;k++)
+			{
+				if(selectedfunds[k].company === xx){
+					found = true;
+					break;
+				}
+			}
+			if(found === false){
+			selectedfunds.push(filteredfunds[x]);
+			}
+		}
+		else
+		{
+			var found = false;
+			for(var k=0;k<selectedfunds.length;k++)
+			{
+				if(selectedfunds[k].company === xx){
+					found = true;
+					break;
+				}
+			}
+			if(found === false){
+		 	selectedfunds.push(wantedfunds[x]);
+		 	}
+		}
+    	
+    	
+    	
+	}
+	else
+	{
+		if(s === 'f') {
+			filteredfunds[x].isfundselected = false;
+		}
+		else
+		{
+			wantedfunds[x].isfundselected = false;
+		}
+    	
+		
+
+		for(var i=0;i<selectedfunds.length;i++)
+    	{
+    		// console.log(selectedfunds[i].bse_symbol);
+    		if(selectedfunds[i].company === xx)
+    		{
+    			selectedfunds.splice(i,1);
+    		}
+
+    	}
+		
+	}
+
+	$("#showingselectedequities").text("Selected "+selectedfunds.length+" Equities");
+	// console.log("Tally Selected Funds");
+	// for(var i=0;i<selectedfunds.length;i++)
+ //    	{
+ //    		// console.log(selectedfunds[i].bse_symbol);
+ //    	}
+
+	// for(i=0;i<selectedfunds.length;i++)
+	// {
+	// 	if(selectedfunds[i] !== undefined && selectedfunds[i] !== "undefined")
+	// 	{
+	// 		// console.log(selectedfunds[i].fundsname);
+	// 	}
+	// }
+}
+
+
+
+
+
+	
+</script>
+</body>
+</html>
